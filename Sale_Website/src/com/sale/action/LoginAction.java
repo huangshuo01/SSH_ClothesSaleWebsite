@@ -2,6 +2,10 @@ package com.sale.action;
 
 import javax.annotation.Resource;
 
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.sale.model.Adminer;

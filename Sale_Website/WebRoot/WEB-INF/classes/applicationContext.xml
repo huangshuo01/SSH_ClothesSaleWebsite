@@ -19,6 +19,9 @@
 	<tx:annotation-driven transaction-manager="txManager" />
 	<context:annotation-config />
 	<bean id="loginAction" class="com.sale.action.LoginAction" />
+	<bean id="goodsAction" class="com.sale.action.GoodsAction" />	
 	<bean id="userDao" class="com.sale.dao.impl.UserDaoImpl" />
+	<bean id="goodsDao" class="com.sale.dao.impl.GoodsDaoImpl" />
 	<bean id="loginService" class="com.sale.service.impl.LoginServiceImpl" />	
+	<bean id="goodsService" class="com.sale.service.impl.GoodsServiceImpl" />	
 </beans>

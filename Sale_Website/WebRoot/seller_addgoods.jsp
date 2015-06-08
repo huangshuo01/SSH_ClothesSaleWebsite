@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -25,69 +26,64 @@
 						<div class="subject">
 							<span>商品信息</span>
 						</div>
-						<form action="GoodsServlet?method=addgoods" method="post">
+						<s:form name="frm111" action="Goods!addGoodsBySeller.action"
+							method="post" theme="simple">
 							<table width="98%" align="center">
 								<tr>
 									<td class="align_right">商品名字:</td>
-									<td class="align_left"><input type="text"
-										name="Goods_Name" value="" /></td>
+									<td class="align_left"><s:textfield name="goods.goodsName" />
+									</td>
 								</tr>
 								<tr>
 									<td class="align_right">商品图片:</td>
 									<td class="align_left"><img name="Goods_Pic" id="pic"
-										src="/images/" /><input type="file" name="imgOne" id="imgOne"
-										value="" onchange="preImg(this.id,'pic');" />
-									</td>
+										weight=80px height=80px
+										src="/images/<s:property value="goods."/>" /> <s:file
+											name="upload" label="形象" size="20"
+											onchange="preImg(this.id,'pic');" /></td>
 								</tr>
 								<tr>
 									<td class="align_right">商品类型:</td>
-									<td valign="middle" class="align_left"><select
-										name="Goods_Type" Style="width:100px"><option>帽子</option>
-											<option>衣服</option>
-											<option>裤子</option>
-											<option>鞋子</option>
-									</select></td>
+									<td valign="middle" class="align_left"><s:select
+											name="gooodsType" laboelposition="left"
+											list="#{1:'帽子',2:'衣服',3:'裤子'}" />
+									</td>
 								</tr>
 								<tr>
 									<td class="align_right">商品款式:</td>
-									<td valign="middle" class="align_left"><select
-										name="Goods_Style" Style="width:100px"><option>新款</option>
-											<option>旧款</option>
-									</select></td>
+									<td valign="middle" class="align_left"><s:select
+											name="goodsType" laboelposition="left"
+											list="#{1:'新款',2:'旧款'}" />
+									</td>
 								</tr>
 								<tr>
 									<td class="align_right">商品价格:</td>
-									<td valign="middle" class="align_left"><input
-										name="Goods_Price" type="text" value="" /><span> *</span></td>
+									<td valign="middle" class="align_left"><s:textfield
+											name="goods.goodsPrice" /></td>
 								</tr>
 								<tr>
 									<td class="align_right">商品数量:</td>
-									<td valign="middle" class="align_left"><input
-										name="Goods_Num" type="text" value="" /><span> *</span></td>
-								</tr>
-								<tr>
-									<td class="align_right">商品销量:</td>
-									<td valign="middle" class="align_left"><input
-										name="Goods_SaleNum" readonly type="text" value="0" /></td>
+									<td valign="middle" class="align_left"><s:textfield
+											name="goods.goodsNum" />
+									</td>
 								</tr>
 								<tr>
 									<td class="align_right">所属商户:</td>
-									<td valign="middle" class="align_left"><%=request.getSession().getAttribute("loginid")%></td>
+									<td valign="middle" class="align_left"><s:hidden
+											name="goods.seller" value="#session.Name" /> <s:property
+											value="#session.Name" /></td>
 								</tr>
 								<tr>
 									<td class="align_right">商品描述:</td>
-									<td valign="middle" class="align_left"><textarea
-											name="Goods_Describe" rows="10" cols="50" />
-										</textarea><span> *</span></td>
+									<td valign="middle" class="align_left"><s:textarea
+											rows="10" cols="50" name="goods.goodsDescribe" /></td>
 								</tr>
 								<tr>
-									<td colspan="2" class="td_center"><input name="submit"
-										type="submit" value="确认上架" onclick="insertgoods()" /> <input
-										name="reset" type="reset" value="重置" />
+									<td class="align_right"><s:submit value="确认上架" />
 									</td>
 								</tr>
 							</table>
-						</form>
+						</s:form>
 					</div>
 				</div>
 			</div>

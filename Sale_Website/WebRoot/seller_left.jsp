@@ -23,13 +23,13 @@
 		<div class="pad_border">
 			<ul class="user_menu">
 				<li class="user_icon1"><a
-					href="GoodsServlet?method=selectgoodslist" target="showinfo">我的店铺</a>
+					href="Goods!findGoodsListBySeller.action">我的店铺</a>
 				</li>
 				<li class="user_icon2"><a
-					href="UserServlet?method=selectInfo&username=<%=request.getSession().getAttribute("loginname")%>"
+					href="#"
 					target="showinfo">我的资料</a>
 				</li>
-				<li class="user_icon8"><a href="addgoods.jsp" target="showinfo">上架新品</a>
+				<li class="user_icon8"><a href="seller_addgoods.jsp" >上架新品</a>
 				</li>
 				<li class="user_icon9"><a
 					href="OrderServlet?method=selectsellerorderlist" target="showinfo">查看订单</a>
