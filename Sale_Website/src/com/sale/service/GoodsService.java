@@ -9,7 +9,7 @@ public interface GoodsService {
 	
 	public abstract List getGoodsListAllByTime();
 	
-	public abstract List getGoodsListBySeller(int Id);
+	public abstract List getGoodsListBySeller(String Id);
 	
 	public abstract List getGoodsListBySellerType(int Id ,String Type);
 

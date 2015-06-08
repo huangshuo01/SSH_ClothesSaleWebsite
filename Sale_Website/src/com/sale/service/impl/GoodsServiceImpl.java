@@ -27,7 +27,7 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public List getGoodsListBySeller(int Id) {
+	public List getGoodsListBySeller(String Id) {
 		return goodsDao.findGoodsListBySeller(Id);
 	}
 	

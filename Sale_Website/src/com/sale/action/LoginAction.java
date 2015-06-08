@@ -16,7 +16,7 @@ import com.sale.service.LoginService;
 public class LoginAction extends ActionSupport {
 	@Resource
 	LoginService loginService;
-	private int Id;
+	private String Id;
 	private String Password;
 	private Custom custom;
 	private Seller seller;
@@ -122,7 +122,7 @@ public class LoginAction extends ActionSupport {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public String getId() {
 		return Id;
 	}
 
@@ -130,7 +130,7 @@ public class LoginAction extends ActionSupport {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(int id) {
+	public void setId(String id) {
 		Id = id;
 	}
 

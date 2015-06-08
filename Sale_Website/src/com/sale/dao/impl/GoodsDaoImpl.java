@@ -39,7 +39,7 @@ public class GoodsDaoImpl implements GoodsDao {
 		return null;
 	}
 
-	public List findGoodsListBySeller(int Id) {
+	public List findGoodsListBySeller(String Id) {
 		Session session = null;
 		List list=null;
 		Seller seller = new Seller();

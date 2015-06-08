@@ -14,7 +14,7 @@ import com.sale.model.Seller;
 public class UserDaoImpl implements UserDao {
 	@Resource
 	private SessionFactory sessionFactory;
-	public List findSellerByIdPsd(int Id, String Password) {
+	public List findSellerByIdPsd(String Id, String Password) {
 		Session session = null;
 		List list=null;
 		Seller seller = new Seller();
@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao {
 		return list;
 	}
 
-	public List findCustomByIdPsd(int Id, String Password) {
+	public List findCustomByIdPsd(String  Id, String Password) {
 		Session session = null;
 		List list=null;
 		Seller seller = new Seller();
@@ -50,7 +50,7 @@ public class UserDaoImpl implements UserDao {
 		return list;
 	}
 
-	public List findAdminByIdPsd(int Id, String Password) {
+	public List findAdminByIdPsd(String  Id, String Password) {
 		Session session = null;
 		List list=null;
 		Seller seller = new Seller();

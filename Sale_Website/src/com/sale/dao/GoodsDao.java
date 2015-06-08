@@ -9,7 +9,7 @@ public interface GoodsDao {
 	
 	public abstract List findGoodsListAllByTime();
 	
-	public abstract List findGoodsListBySeller(int Id);
+	public abstract List findGoodsListBySeller(String Id);
 	
 	public abstract List findGoodsListBySellerType(int Id ,String Type);
 	

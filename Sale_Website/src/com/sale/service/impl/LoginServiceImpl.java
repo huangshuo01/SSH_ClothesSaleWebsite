@@ -15,33 +15,33 @@ public class LoginServiceImpl implements LoginService {
 	@Resource
 	UserDao userDao;
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public Seller getSellerByIdPsd(int Id, String Password) {
+	public Seller getSellerByIdPsd(String  Id, String Password) {
 		return (Seller) userDao.findSellerByIdPsd(Id, Password).get(0);
 	}
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public Custom getCustomByIdPsd(int Id, String Password) {
+	public Custom getCustomByIdPsd(String  Id, String Password) {
 		return (Custom) userDao.findCustomByIdPsd(Id, Password).get(0);
 	}
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public Adminer getAdminByIdPsd(int Id, String Password) {
+	public Adminer getAdminByIdPsd(String  Id, String Password) {
 		return (Adminer) userDao.findAdminByIdPsd(Id, Password).get(0);
 	}
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public Boolean checkSellerLogin(int Id, String Password) {
+	public Boolean checkSellerLogin(String  Id, String Password) {
 		if (userDao.findSellerByIdPsd(Id, Password).isEmpty())
 			return false;
 		else
 			return true;
 	}
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public Boolean checkCustomLogin(int Id, String Password) {
+	public Boolean checkCustomLogin(String  Id, String Password) {
 		if (userDao.findCustomByIdPsd(Id, Password).isEmpty())
 			return false;
 		else
 			return true;
 	}
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public Boolean checkAdminLogin(int Id, String Password) {
+	public Boolean checkAdminLogin(String  Id, String Password) {
 		if (userDao.findAdminByIdPsd(Id, Password).isEmpty())
 			return false;
 		else

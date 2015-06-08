@@ -71,7 +71,7 @@ public class GoodsAction extends ActionSupport {
 
 	public String findGoodsListBySeller() {
 		ActionContext ac = ActionContext.getContext();
-		list = goodsService.getGoodsListBySeller((Integer) ac.getSession().get(
+		list = goodsService.getGoodsListBySeller((String) ac.getSession().get(
 				"Id"));
 		System.out.println(list);
 		ac.getSession().put("list", list);
