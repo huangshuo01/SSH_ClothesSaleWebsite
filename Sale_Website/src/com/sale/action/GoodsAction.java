@@ -9,16 +9,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 import java.util.Random;
-
 import javax.annotation.Resource;
-
 import org.apache.struts2.ServletActionContext;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.sale.model.Goods;
+import com.sale.model.Seller;
 import com.sale.service.GoodsService;
 
 public class GoodsAction extends ActionSupport {
@@ -78,20 +75,21 @@ public class GoodsAction extends ActionSupport {
 				"Id"));
 		System.out.println(list);
 		ac.getSession().put("list", list);
-		return "sellerlist";
+		return "success";
 	}
 
-	public String addGoodsBySeller() {
-		/*System.out.println("add start");
-		String path = ServletActionContext.getServletContext().getRealPath(
+	public String add() {
+		/*String path = ServletActionContext.getServletContext().getRealPath(
 				this.getSavePath())
-				+ "\\" + this.getUploadFileName();
-		System.out.println(goods.getSeller().getSellerId());
+				+ "\\" + this.getUploadFileName();		
 		goods.setGoodsPic(this.uploadFileName);// 将上传的文件名称赋值给User类中的photo属性
+		Seller seller=new Seller();
+		seller.setSellerId(123456);
+		goods.setSeller(seller);
 		File target = new File(path); // 定义目标文件对象
 		copy(this.upload, target); // 调用copy()方法，实现文件的写入
 		goodsService.addGoodsBySeller(goods);*/
-		return "sellerlist";
+		return "addgoods";
 	}
 
 	public Goods getGoods() {

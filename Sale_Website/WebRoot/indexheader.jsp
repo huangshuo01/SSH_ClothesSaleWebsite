@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          </s:if>
          <s:else>
          <li class="my_account"><s:property value="#session.Id"/></li>
-         <li class="my_account"><a href="Goods!findGoodsListBySeller.action" id="">管理</a></li>        
+         <li class="my_account"><a href="indexheader。jsp" id="reg">管理</a></li>        
          <li class="my_account"><a href="Login!exit.action" id="reg">退出</a></li>        
          </s:else>
     </ul>      

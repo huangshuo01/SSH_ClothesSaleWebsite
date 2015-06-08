@@ -19,15 +19,11 @@
 		</property>
 		<property name="myeclipse.connection.profile">sale</property>
 		<mapping resource="com/sale/model/GoodsOrder.hbm.xml" />
-		<mapping resource="com/sale/model/GoodsStyle.hbm.xml" />
 		<mapping resource="com/sale/model/Goods.hbm.xml" />
 		<mapping resource="com/sale/model/Adminer.hbm.xml" />
-		<mapping resource="com/sale/model/GoodsType.hbm.xml" />
 		<mapping resource="com/sale/model/ShoppingCart.hbm.xml" />
-		<mapping resource="com/sale/model/OrderGoods.hbm.xml" />
 		<mapping resource="com/sale/model/Custom.hbm.xml" />
 		<mapping resource="com/sale/model/Seller.hbm.xml" />
-
 	</session-factory>
 
 </hibernate-configuration>

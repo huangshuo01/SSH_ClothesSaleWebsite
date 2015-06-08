@@ -8,31 +8,28 @@
     <class name="com.sale.model.Goods" table="Goods" schema="dbo" catalog="ClothesSale">
         <id name="goodsId" type="java.lang.Integer">
             <column name="Goods_Id" />
-            <generator class="native" />
+            <generator class="assigned" />
         </id>
         <many-to-one name="seller" class="com.sale.model.Seller" fetch="select">
-            <column name="Seller_Id" not-null="true" />
-        </many-to-one>
-        <many-to-one name="goodsType" class="com.sale.model.GoodsType" fetch="select">
-            <column name="Goods_Type" length="10" />
-        </many-to-one>
-        <many-to-one name="goodsStyle" class="com.sale.model.GoodsStyle" fetch="select">
-            <column name="Goods_Style" length="10" />
+            <column name="Seller_Id" length="20" />
         </many-to-one>
         <property name="goodsName" type="java.lang.String">
-            <column name="Goods_Name" length="15" not-null="true" />
+            <column name="Goods_Name" length="20" not-null="true" />
         </property>
         <property name="goodsPic" type="java.lang.String">
             <column name="Goods_Pic" length="40" />
         </property>
         <property name="goodsPrice" type="java.lang.Double">
-            <column name="Goods_Price" precision="7" />
+            <column name="Goods_Price" precision="11" not-null="true" />
         </property>
         <property name="goodsNum" type="java.lang.Integer">
-            <column name="Goods_Num" />
+            <column name="Goods_Num" not-null="true" />
         </property>
         <property name="goodsSaleNum" type="java.lang.Integer">
             <column name="Goods_SaleNum" />
+        </property>
+        <property name="goodsType" type="java.lang.String">
+            <column name="Goods_Type" length="15" />
         </property>
         <property name="goodsDescribe" type="java.lang.String">
             <column name="Goods_Describe" length="200" />
@@ -42,12 +39,6 @@
                 <column name="Goods_Id" not-null="true" />
             </key>
             <one-to-many class="com.sale.model.ShoppingCart" />
-        </set>
-        <set name="orderGoodses" inverse="true">
-            <key>
-                <column name="Goods_Id" />
-            </key>
-            <one-to-many class="com.sale.model.OrderGoods" />
         </set>
     </class>
 </hibernate-mapping>

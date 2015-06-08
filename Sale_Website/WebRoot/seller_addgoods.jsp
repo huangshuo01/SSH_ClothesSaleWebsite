@@ -26,8 +26,7 @@
 						<div class="subject">
 							<span>商品信息</span>
 						</div>
-						<s:form name="frm111" action="Goods!addGoodsBySeller.action"
-							method="post" theme="simple">
+						<s:form action="Goods!add.action" method="post" theme="simple">
 							<table width="98%" align="center">
 								<tr>
 									<td class="align_right">商品名字:</td>
@@ -37,49 +36,45 @@
 								<tr>
 									<td class="align_right">商品图片:</td>
 									<td class="align_left"><img name="Goods_Pic" id="pic"
-										weight=80px height=80px
-										src="/images/<s:property value="goods."/>" /> <s:file
-											name="upload" label="形象" size="20"
-											onchange="preImg(this.id,'pic');" /></td>
+										weight=80px height=80px src="" /> <s:file name="upload"
+											label="形象" size="20" onchange="preImg(this.id,'pic');" />
+									</td>
 								</tr>
 								<tr>
 									<td class="align_right">商品类型:</td>
-									<td valign="middle" class="align_left"><s:select
-											name="gooodsType" laboelposition="left"
-											list="#{1:'帽子',2:'衣服',3:'裤子'}" />
-									</td>
+									<td valign="middle" class="align_left"><s:select name="a"
+											list="#{1:'帽子',2:'衣服',3:'裤子'}" /></td>
 								</tr>
 								<tr>
 									<td class="align_right">商品款式:</td>
-									<td valign="middle" class="align_left"><s:select
-											name="goodsType" laboelposition="left"
-											list="#{1:'新款',2:'旧款'}" />
-									</td>
+									<td valign="middle" class="align_left"><s:select name="b"
+											list="#{1:'新款',2:'旧款'}" /></td>
 								</tr>
 								<tr>
 									<td class="align_right">商品价格:</td>
 									<td valign="middle" class="align_left"><s:textfield
-											name="goods.goodsPrice" /></td>
+											name="goods.goodsPrice" />
+									</td>
 								</tr>
 								<tr>
 									<td class="align_right">商品数量:</td>
 									<td valign="middle" class="align_left"><s:textfield
-											name="goods.goodsNum" />
-									</td>
+											name="goods.goodsNum" /></td>
 								</tr>
 								<tr>
 									<td class="align_right">所属商户:</td>
-									<td valign="middle" class="align_left"><s:hidden
-											name="goods.seller" value="#session.Name" /> <s:property
-											value="#session.Name" /></td>
+									<td valign="middle" class="align_left"><s:property
+											value="#session.Name" />
+									</td>
 								</tr>
 								<tr>
 									<td class="align_right">商品描述:</td>
 									<td valign="middle" class="align_left"><s:textarea
-											rows="10" cols="50" name="goods.goodsDescribe" /></td>
+											rows="10" cols="50" name="goods.goodsDescribe" />
+									</td>
 								</tr>
 								<tr>
-									<td class="align_right"><s:submit value="确认上架" />
+									<td colspan="2"><s:submit value="确认上架" />
 									</td>
 								</tr>
 							</table>

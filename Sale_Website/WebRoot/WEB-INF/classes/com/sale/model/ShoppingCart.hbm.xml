@@ -8,7 +8,7 @@
     <class name="com.sale.model.ShoppingCart" table="ShoppingCart" schema="dbo" catalog="ClothesSale">
         <composite-id name="id" class="com.sale.model.ShoppingCartId">
             <key-many-to-one name="custom" class="com.sale.model.Custom">
-                <column name="Custom_Id" />
+                <column name="Custom_Id" length="20" />
             </key-many-to-one>
             <key-many-to-one name="goods" class="com.sale.model.Goods">
                 <column name="Goods_Id" />

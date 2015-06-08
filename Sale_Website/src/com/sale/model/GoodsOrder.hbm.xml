@@ -8,13 +8,13 @@
     <class name="com.sale.model.GoodsOrder" table="GoodsOrder" schema="dbo" catalog="ClothesSale">
         <id name="orderId" type="java.lang.Integer">
             <column name="Order_Id" />
-            <generator class="native" />
+            <generator class="assigned" />
         </id>
         <many-to-one name="custom" class="com.sale.model.Custom" fetch="select">
-            <column name="Custom_Id" not-null="true" />
+            <column name="Custom_Id" length="20" not-null="true" />
         </many-to-one>
         <many-to-one name="seller" class="com.sale.model.Seller" fetch="select">
-            <column name="Seller_Id" />
+            <column name="Seller_Id" length="20" />
         </many-to-one>
         <property name="orderAdr" type="java.lang.String">
             <column name="Order_Adr" length="60" not-null="true" />
@@ -37,11 +37,5 @@
         <property name="orderDate" type="java.sql.Timestamp">
             <column name="Order_Date" length="23" />
         </property>
-        <set name="orderGoodses" inverse="true">
-            <key>
-                <column name="Order_Id" />
-            </key>
-            <one-to-many class="com.sale.model.OrderGoods" />
-        </set>
     </class>
 </hibernate-mapping>

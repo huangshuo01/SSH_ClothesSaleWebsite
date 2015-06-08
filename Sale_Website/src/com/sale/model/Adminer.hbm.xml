@@ -6,39 +6,39 @@
 -->
 <hibernate-mapping>
     <class name="com.sale.model.Adminer" table="Adminer" schema="dbo" catalog="ClothesSale">
-        <id name="adminerId" type="java.lang.Integer">
-            <column name="Adminer_Id" />
-            <generator class="native" />
+        <id name="adminerId" type="java.lang.String">
+            <column name="Adminer_Id" length="20" />
+            <generator class="assigned" />
         </id>
-        <property name="adminerBorn" type="java.lang.String">
-            <column name="Adminer_born" length="20" />
+        <property name="adminerPassword" type="java.lang.String">
+            <column name="Adminer_Password" length="20" not-null="true" />
         </property>
         <property name="adminerName" type="java.lang.String">
-            <column name="Adminer_name" length="20" />
+            <column name="Adminer_Name" length="10" not-null="true" unique="true" />
+        </property>
+        <property name="adminerBorn" type="java.lang.String">
+            <column name="Adminer_Born" length="20" />
+        </property>
+        <property name="adminerPic" type="java.lang.String">
+            <column name="Adminer_Pic" length="40" />
         </property>
         <property name="adminerSex" type="java.lang.String">
-            <column name="Adminer_sex" length="2" />
-        </property>
-        <property name="adminerEmail" type="java.lang.String">
-            <column name="Adminer_email" length="20" />
-        </property>
-        <property name="adminerMsn" type="java.lang.String">
-            <column name="Adminer_MSN" length="20" />
+            <column name="Adminer_Sex" length="2" />
         </property>
         <property name="adminerQq" type="java.lang.String">
-            <column name="Adminer_qq" length="20" />
+            <column name="Adminer_Qq" length="20" />
         </property>
-        <property name="adminerOfficerphone" type="java.lang.String">
-            <column name="Adminer_officerphone" length="20" />
+        <property name="adminerPhone" type="java.lang.String">
+            <column name="Adminer_Phone" length="20" />
         </property>
-        <property name="adminerHomephone" type="java.lang.String">
-            <column name="Adminer_homephone" length="20" />
+        <property name="adminerHometown" type="java.lang.String">
+            <column name="Adminer_Hometown" length="40" />
         </property>
-        <property name="adminerMobilephone" type="java.lang.String">
-            <column name="Adminer_mobilephone" length="20" />
+        <property name="adminerLocation" type="java.lang.String">
+            <column name="Adminer_Location" length="40" />
         </property>
-        <property name="adminerPassword" type="java.lang.String">
-            <column name="Adminer_password" length="20" />
+        <property name="adminerDescribe" type="java.lang.String">
+            <column name="Adminer_Describe" length="50" />
         </property>
     </class>
 </hibernate-mapping>

@@ -8,10 +8,9 @@
 			<result name="input">/login.jsp</result>
 		</action>
 		<action name="Goods" class="goodsAction">
-			<!-- <param name="savePath">/upload</param> -->
-			<result name="sellerlist">/seller_goodslist.jsp</result>
-			<result name="addgoods">/seller_addgoods.jsp</result>			
-			<result name="input">/login.jsp</result>
+			<param name="savePath">/upload</param>
+			<result name="success">/seller_goodslist.jsp</result>
+			<result name="addgoods">/index.jsp</result>			
 		</action>
 	</package>
 </struts>    

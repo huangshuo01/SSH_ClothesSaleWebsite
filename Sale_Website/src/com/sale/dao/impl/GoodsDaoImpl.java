@@ -62,13 +62,14 @@ public class GoodsDaoImpl implements GoodsDao {
 	}
 
 	public void insertGoodsBySeller(Goods goods){
-		Random random = new Random();
 		Session session = null;
 		Transaction tx = null;
 		try {
-			session = sessionFactory.getCurrentSession();
+			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
+			Random random = new Random();
 			goods.setGoodsId(random.nextInt(899999) + 100000);
+			System.out.println(goods.getGoodsId());
 			session.save(goods);
 			tx.commit();
 		} catch (Exception e) {
