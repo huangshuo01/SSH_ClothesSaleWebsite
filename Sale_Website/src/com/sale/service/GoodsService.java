@@ -5,11 +5,16 @@ import java.util.List;
 import com.sale.model.Goods;
 
 public interface GoodsService {
-	public abstract List getGoodsListAll();
+	
+	public abstract int  getPageCountAll(int size);
+	
+	public abstract int  getPageCountBySeller(int size,String sellerId);
+	
+	public abstract List getGoodsListAll(int pageNo,int pageSize);
 	
 	public abstract List getGoodsListAllByTime();
 	
-	public abstract List getGoodsListBySeller(String Id);
+	public abstract List getGoodsListBySeller(String Id,int pageNo,int pageSize);
 	
 	public abstract List getGoodsListBySellerType(int Id ,String Type);
 

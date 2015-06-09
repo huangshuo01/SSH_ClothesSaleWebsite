@@ -17,7 +17,53 @@ import com.sale.model.Seller;
 public class GoodsDaoImpl implements GoodsDao {
 	@Resource
 	SessionFactory sessionFactory;
-	public List findGoodsListAll() {
+	
+	public  int findPageCountAll(int size){
+		Session session = null;
+		int countPage=0;
+		long count=0;
+		String hql = "select count(goodsId) from Goods";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+			count =(Long)query.uniqueResult();
+			countPage=(int)count;
+			if(countPage%10==0)
+				countPage=countPage/size;
+			else
+				countPage=countPage/size+1;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionFactory.close();
+		return countPage;
+	}
+	
+	public  int findPageCountBySeller(int size,String sellerId){
+		Session session = null;
+		int countPage=0;
+		long count=0;
+		String hql = "select count(goodsId) from Goods where seller.sellerId=?";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+			query.setParameter(0, sellerId);	
+			count =(Long)query.uniqueResult();
+			countPage=(int)count;
+			if(countPage%10==0)
+				countPage=countPage/size;
+			else
+				countPage=countPage/size+1;
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionFactory.close();
+		return countPage;
+	}
+	
+	public List findGoodsListAll(int pageNo,int pageSize) {
 		Session session = null;
 		List list=null;
 		Seller seller = new Seller();
@@ -25,7 +71,8 @@ public class GoodsDaoImpl implements GoodsDao {
 		try {
 			session = sessionFactory.getCurrentSession();
 			Query query = session.createQuery(hql);
-//			query.setParameter(0, Id);	
+            query.setFirstResult((pageNo-1)*pageSize);
+            query.setMaxResults(pageSize);
 			list = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -39,7 +86,7 @@ public class GoodsDaoImpl implements GoodsDao {
 		return null;
 	}
 
-	public List findGoodsListBySeller(String Id) {
+	public List findGoodsListBySeller(String Id,int pageNo,int pageSize) {
 		Session session = null;
 		List list=null;
 		Seller seller = new Seller();
@@ -47,7 +94,9 @@ public class GoodsDaoImpl implements GoodsDao {
 		try {
 			session = sessionFactory.getCurrentSession();
 			Query query = session.createQuery(hql);
-			query.setParameter(0, Id);	
+			query.setParameter(0, Id);
+            query.setFirstResult((pageNo-1)*pageSize);
+            query.setMaxResults(pageSize);
 			list = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();

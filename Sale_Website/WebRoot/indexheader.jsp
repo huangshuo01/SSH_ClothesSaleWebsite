@@ -34,8 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div id="nav">
         <ul class="mian_nav">
             <li class="nav_index"><a href="indexshop.jsp" title="">首页</a></li>
-            <li class=""><a href="product_custom.htm" title="">服装店</a></li>
-            <li class=""><a href="GoodsServlet?method=selectgoodslist1" target="show2" title="">产品类目</a></li>
+            <li class=""><a href="Goods!findGoodsListAll.action?pageNo=1">所有产品</a></li>
         </ul>
     </div>
 </div>

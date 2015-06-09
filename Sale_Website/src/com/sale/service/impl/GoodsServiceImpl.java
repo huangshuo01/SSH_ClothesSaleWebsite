@@ -16,8 +16,19 @@ public class GoodsServiceImpl implements GoodsService {
     GoodsDao goodsDao;
     
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public List getGoodsListAll() {
-		return goodsDao.findGoodsListAll();
+	public int getPageCountAll(int size) {
+		return goodsDao.findPageCountAll(size);
+	}
+
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public int getPageCountBySeller(int size, String sellerId) {
+		return goodsDao.findPageCountBySeller(size, sellerId);
+	};
+
+    
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public List getGoodsListAll(int pageNo,int pageSize) {
+		return goodsDao.findGoodsListAll(pageNo,pageSize);
 	}
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
@@ -27,8 +38,8 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public List getGoodsListBySeller(String Id) {
-		return goodsDao.findGoodsListBySeller(Id);
+	public List getGoodsListBySeller(String Id,int pageNo,int pageSize) {
+		return goodsDao.findGoodsListBySeller(Id,pageNo, pageSize);
 	}
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
@@ -54,6 +65,5 @@ public class GoodsServiceImpl implements GoodsService {
 	public void deleteGoodsBygoodsId(Goods goods){
 		goods=(Goods)goodsDao.findGoodsBygoodsId(goods.getGoodsId()).get(0);
 		goodsDao.deleteGoodsBygoodsId(goods);
-	};
-
+	}
 }

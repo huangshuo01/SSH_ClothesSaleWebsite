@@ -47,27 +47,50 @@
 
 								<s:iterator value="list" status="status">
 									<tr>
-										<td><a href="#" title=""><img name="Goods_Pic" id="pic"
-									style="width:100px;height:100px;"
-									src="upload/<s:property value="goodsPic"/>" /> 
-										</a></td>
+										<td><a href="#" title=""><img name="Goods_Pic"
+												id="pic" style="width:100px;height:100px;"
+												src="upload/<s:property value="goodsPic"/>" /> </a>
+										</td>
 										<td><s:hidden name="goodsId" /> <s:property
-												value="goodsName" /></td>
+												value="goodsName" />
+										</td>
 										<td><span class="font_2">￥<s:property
-													value="goodsPrice" />
-										</span></td>
+													value="goodsPrice" /> </span>
+										</td>
 										<td><span class="font_2"><s:property
-													value="goodsSaleNum" />
-										</span></td>
+													value="goodsSaleNum" /> </span>
+										</td>
 										<td><span class="font_2"><s:property
-													value="goodsNum" />
-										</span></td>
-										<td><a href="Goods!findGoodsBygoodsId.action?goods.goodsId=<s:property value="goodsId"/>"
+													value="goodsNum" /> </span>
+										</td>
+										<td><a
+											href="Goods!findGoodsBygoodsId.action?goods.goodsId=<s:property value="goodsId"/>"
 											Style="color: red; font-weight: bold;">商品详情</a> <br> <a
 											href="Goods!deleteGoodsBygoodsId.action?goods.goodsId=<s:property value="goodsId"/>"
-											Style="color: red; font-weight: bold;">删除商品</a></td>
+											Style="color: red; font-weight: bold;">删除商品</a>
+										</td>
 								</s:iterator>
 								<tr>
+							</table>
+							<table border="0" align="left" cellpadding="0" cellspacing="0">
+								<span Style="font-size:5px;">&nbsp;&nbsp;当前第<s:property
+										value="pageNo" /> / <s:property value="pageCount" />页</span>
+							</table>
+							<table border="0" align="right" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="40"><a
+										href="Goods!findGoodsListBySeller.action?pageNo=1">首页</a>
+									</td>
+									<td width="45"><a
+										href="Goods!findGoodsListBySeller.action?pageNo=<s:property value="pageNo-1"/>">上页</a>
+									</td>
+									<td width="45"><a
+										href="Goods!findGoodsListBySeller.action?pageNo=<s:property value="pageNo+1"/>">下页</a>
+									</td>
+									<td width="40"><a
+										href="Goods!findGoodsListBySeller.action?pageNo=<s:property value="pageCount"/>">尾页</a>
+									</td>
+								</tr>
 							</table>
 						</form>
 					</div>

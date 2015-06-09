@@ -22,9 +22,13 @@ import com.sale.service.LoginService;
 public class GoodsAction extends ActionSupport {
 	@Resource
 	GoodsService goodsService;
-
+		
 	private Goods goods;
 	private List list;
+	private int pageNo = 1;
+	private int pageSize = 4;
+	private int pageCount;
+	private String redirect;
 	private static final int BUFFER_SIZE = 400 * 400;
 	private File upload;// 封装上传文件域的属性
 	private String uploadContentType;// 封装上传文件的类型
@@ -67,15 +71,38 @@ public class GoodsAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
+		if(redirect.equals("delete"))
 		return findGoodsListBySeller();
+		else if(redirect.equals("addShopCart"))
+			return findGoodsListAll();
+		else
+			return null;
 	}
 
 	public String findGoodsListBySeller() {
 		ActionContext ac = ActionContext.getContext();
-		list = goodsService.getGoodsListBySeller((String) ac.getSession().get(
-				"Id"));
+		String sellerId=(String)ac.getSession().get("Id");
+		pageCount=goodsService.getPageCountBySeller(pageSize,sellerId);
+        if(pageNo<=0)
+        	pageNo=1;
+        else if(pageNo>pageCount)
+        	pageNo=pageCount;
+		list = goodsService.getGoodsListBySeller(sellerId,pageNo,pageSize);
 		ac.getSession().put("list", list);
 		return "success";
+	}
+	
+	public String findGoodsListAll(){
+		ActionContext ac = ActionContext.getContext();
+		String sellerId=(String)ac.getSession().get("Id");
+		pageCount=goodsService.getPageCountBySeller(pageSize,sellerId);
+        if(pageNo<=0)
+        	pageNo=1;
+        else if(pageNo>pageCount)
+        	pageNo=pageCount;
+		list = goodsService.getGoodsListAll(pageNo,pageSize);
+		ac.getSession().put("list", list);
+		return "goodslist";
 	}
 
 	public String addGoods() {
@@ -185,6 +212,62 @@ public class GoodsAction extends ActionSupport {
 	 */
 	public void setSavePath(String savePath) {
 		this.savePath = savePath;
+	}
+
+	/**
+	 * @return the pageNo
+	 */
+	public int getPageNo() {
+		return pageNo;
+	}
+
+	/**
+	 * @param pageNo the pageNo to set
+	 */
+	public void setPageNo(int pageNo) {
+		this.pageNo = pageNo;
+	}
+
+	/**
+	 * @return the pageSize
+	 */
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	/**
+	 * @param pageSize the pageSize to set
+	 */
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	/**
+	 * @return the pageCount
+	 */
+	public int getPageCount() {
+		return pageCount;
+	}
+
+	/**
+	 * @param pageCount the pageCount to set
+	 */
+	public void setPageCount(int pageCount) {
+		this.pageCount = pageCount;
+	}
+
+	/**
+	 * @return the redirect
+	 */
+	public String getRedirect() {
+		return redirect;
+	}
+
+	/**
+	 * @param redirect the redirect to set
+	 */
+	public void setRedirect(String redirect) {
+		this.redirect = redirect;
 	}
 
 }

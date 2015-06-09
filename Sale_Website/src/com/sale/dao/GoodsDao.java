@@ -5,11 +5,16 @@ import java.util.List;
 import com.sale.model.Goods;
 
 public interface GoodsDao {
-	public abstract List findGoodsListAll();
+	
+	public abstract int findPageCountAll(int size);
+	
+	public abstract int findPageCountBySeller(int size,String sellerId);
+	
+	public abstract List findGoodsListAll(int pageNo,int pageSize);
 	
 	public abstract List findGoodsListAllByTime();
 	
-	public abstract List findGoodsListBySeller(String Id);
+	public abstract List findGoodsListBySeller(String Id,int pageNo,int pageSize);
 	
 	public abstract List findGoodsListBySellerType(int Id ,String Type);
 	

@@ -21,9 +21,9 @@
 		<mapping resource="com/sale/model/GoodsOrder.hbm.xml" />
 		<mapping resource="com/sale/model/Goods.hbm.xml" />
 		<mapping resource="com/sale/model/Adminer.hbm.xml" />
-		<mapping resource="com/sale/model/ShoppingCart.hbm.xml" />
 		<mapping resource="com/sale/model/Custom.hbm.xml" />
 		<mapping resource="com/sale/model/Seller.hbm.xml" />
+		<mapping resource="com/sale/model/ShoppingCart.hbm.xml" />
 	</session-factory>
 
 </hibernate-configuration>

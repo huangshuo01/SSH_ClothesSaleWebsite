@@ -13,7 +13,18 @@
 			<result name="addgoods">/seller_addgoods.jsp</result>
 			<result name="goods">/seller_goods.jsp</result>
 			<result name="update">/seller_goods.jsp</result>
-			<result name="delete" type="redirectAction">Goods</result>
+			<result name="delete" type="redirectAction">
+				<param name="actionName">Goods</param>
+				<param name="redirect">delete</param>
+			</result>
+			<result name="goodslist">/goods.jsp</result>
+		</action>
+		<action name="ShopCart" class="shopCartAction">
+			<result name="addShopCart" type="redirectAction">
+				<param name="actionName">Goods</param>
+				<param name="redirect">addShopCart</param>
+			</result>
+			<result name="input">/login.jsp</result>
 		</action>
 	</package>
 </struts>    

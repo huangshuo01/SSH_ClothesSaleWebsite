@@ -35,9 +35,9 @@
 .box_3 .pro_con1 li a:hover {color:#a0191f!important;} 
 .box_3 .pro_con1 .pro_img { width:150px; height:160px; padding:4px; border:1px solid #e4e4e4; }
 .box_3 .pro_con1 .pro_name { padding:3px; line-height:20px;}
-.box_3 .pro_con1 .pro_price { padding:0 3px; line-height:20px; display:inline-block;}
+.box_3 .pro_con1 .pro_price { padding:0 3px; line-height:20px;}
 .box_3 .pro_con1 .pro_price span { font-weight:bold; color:#a0191f; }
-.box_3 .pro_con1 .pro_custom { width:80px; height:18px; padding-top:5px;}
+.box_3 .pro_con1 .pro_custom { width:160px; height:30px; padding-top:5px;}
 
 /*浜у搧鍒楄〃鍐呭鏍峰紡2 list*/
 .box_3_list { width:650px; height:auto; margin:5px; overflow:hidden;}
@@ -48,7 +48,7 @@
 .box_3_list .pro_con1 .pro_price {line-height:20px;  margin:15px 10px 10px 10px; padding:0 10px;display:inline-block; float:left;}
 .box_3_list .pro_con1 .pro_price span {width:80px;font-weight:bold; color:#a0191f;}
 .box_3_list .pro_con1 .pro_salesum span {width:80px;font-weight:bold; color:#a0191f; }
-.box_3_list .pro_con1 .pro_custom { width:60px; height:18px; padding-top:10px; margin:5px;float:right;}
+.box_3_list .pro_con1 .pro_custom { width:100px; height:50px; padding-top:10px; margin:5px;float:right;}
 
 
 
