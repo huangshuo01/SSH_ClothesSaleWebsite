@@ -36,8 +36,24 @@ public class GoodsServiceImpl implements GoodsService {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)	
+	public Goods getGoodsBygoodsId(Integer goodsId){
+		return (Goods)goodsDao.findGoodsBygoodsId(goodsId).get(0);
+	}
+	
 	public void addGoodsBySeller(Goods goods){
 		goodsDao.insertGoodsBySeller(goods);
 	}
+	
+	public void updateGoods(Goods goods){
+		goodsDao.updateGoods(goods);
+	}
+	
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)		
+	public void deleteGoodsBygoodsId(Goods goods){
+		goods=(Goods)goodsDao.findGoodsBygoodsId(goods.getGoodsId()).get(0);
+		goodsDao.deleteGoodsBygoodsId(goods);
+	};
+
 }

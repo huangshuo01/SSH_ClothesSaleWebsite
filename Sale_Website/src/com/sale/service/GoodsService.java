@@ -14,5 +14,10 @@ public interface GoodsService {
 	public abstract List getGoodsListBySellerType(int Id ,String Type);
 
 	public abstract void addGoodsBySeller(Goods goods);
+	
+	public abstract Goods getGoodsBygoodsId(Integer goodsId);
 
+	public abstract void updateGoods(Goods goods);
+	
+	public abstract void deleteGoodsBygoodsId(Goods goods);
 }

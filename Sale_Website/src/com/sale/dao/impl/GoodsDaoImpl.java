@@ -67,10 +67,52 @@ public class GoodsDaoImpl implements GoodsDao {
 		try {
 			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
-			Random random = new Random();
-			goods.setGoodsId(random.nextInt(899999) + 100000);
-			System.out.println(goods.getGoodsId());
 			session.save(goods);
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+	}
+	
+	public List findGoodsBygoodsId(Integer goodsId){
+		Session session = null;
+		List list=null;
+		Seller seller = new Seller();
+		String hql = "from Goods where goodsId=?";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+			query.setParameter(0, goodsId);	
+			list = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		return list;
+	}
+	
+	public void updateGoods(Goods goods){
+		Session session = null;
+		Transaction tx = null;
+		try {
+			session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			session.update(goods);
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+	}
+	
+	public void deleteGoodsBygoodsId(Goods goods){
+		Session session = null;
+		Transaction tx = null;
+		try {
+			session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			session.delete(goods);
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -10,7 +10,10 @@
 		<action name="Goods" class="goodsAction">
 			<param name="savePath">/upload</param>
 			<result name="success">/seller_goodslist.jsp</result>
-			<result name="addgoods">/index.jsp</result>			
+			<result name="addgoods">/seller_addgoods.jsp</result>
+			<result name="goods">/seller_goods.jsp</result>
+			<result name="update">/seller_goods.jsp</result>
+			<result name="delete" type="redirectAction">Goods</result>
 		</action>
 	</package>
 </struts>    

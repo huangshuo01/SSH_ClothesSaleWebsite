@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -22,92 +23,64 @@
 	<div class="main">
 		<div class="user_content">
 			<jsp:include page="seller_left.jsp" />
-			<div class="con_right">
-				<div class="pad_border">
-					<div class="user_con">
-						<div class="subject">
-							<span>商品信息</span>
-						</div>
-						<form name="frm" method="post">
-
-							<table width="98%" align="center">
-								<tr>
-									<td class="align_right">商品编码:</td>
-									<td class="align_left"><input type="text" name="Goods_Id1"
-										value="" />
-									</td>
-								</tr>
-								<tr>
-									<td class="align_right">商品名字:</td>
-									<td class="align_left"><input type="text"
-										name="Goods_Name1" value="" />
-									</td>
-								</tr>
-								<tr>
-									<td class="align_right">商品图片:</td>
-									<td class="align_left"><img name="Goods_Pic" id="pic"
-										src="images/" /><input type="file" name="imgOne1" id="imgOne"
-										value="" onchange="preImg(this.id,'pic');" /></td>
-								</tr>
-								<tr>
-									<td class="align_right">商品类型:</td>
-									<td valign="middle" class="align_left"><select
-										name="Goods_Type1" Style="width:100px">
-											<option selected="selected"></option>
-									</select>
-									</td>
-								</tr>
-								<tr>
-									<td class="align_right">商品款式:</td>
-									<td valign="middle" class="align_left"><select
-										name="Goods_Style1" Style="width:100px">
-
-											<option selected="selected"></option>
-
-											<option></option>
-									</select>
-									</td>
-								</tr>
-								<tr>
-									<td class="align_right">商品价格:</td>
-									<td valign="middle" class="align_left"><input
-										name="Goods_Price1" type="text" value="" /><span> *</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="align_right">商品数量:</td>
-									<td valign="middle" class="align_left"><input
-										name="Goods_Num1" type="text" value="" /><span> *</span>
-									</td>
-								</tr>
-								<tr>
-									<td class="align_right">商品销量:</td>
-									<td valign="middle" class="align_left"><input
-										name="Goods_SaleNum1" readonly type="text" value="" />
-									</td>
-								</tr>
-								<tr>
-									<td class="align_right">所属商户:</td>
-									<td valign="middle" class="align_left"><input
-										name="Seller_Id1" type="text" value="" />
-									</td>
-								</tr>
-								<tr>
-									<td class="align_right">商品描述:</td>
-									<td valign="middle" class="align_left"><textarea
-											name="Goods_Describe1" rows="10" cols="50"></textarea><span>
-											*</span>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2" class="td_center"><input name="update"
-										type="submit" class="bnt_blue_1" value="修改"
-										onclick="updategoods()" /> <input name="delete" type="submit"
-										class="bnt_blue_1" value="删除" onclick="deletegoods()" /></td>
-								</tr>
-							</table>
-						</form>
+			<div class="pad_border">
+				<div class="user_con">
+					<div class="subject">
+						<span>商品信息</span>
 					</div>
+					<s:form action="Goods!updateGoods.action" method="post" theme="simple"
+						enctype="multipart/form-data">
+						<table width="98%" align="center">
+						<tr>
+								<td class="align_right">商品编号:</td>
+								<td class="align_left"> <s:property
+										value="goods.goodsId" /></td>
+							</tr>
+							<tr>
+								<td class="align_right">商品名字:</td>
+								<td class="align_left"> <s:textfield
+										name="goods.goodsName" /></td>
+							</tr>
+							<tr>
+								<td class="align_right">商品图片:</td>
+								<td class="align_left"><img name="Goods_Pic" id="pic"
+									style="width:100px;height:100px;"
+									src="upload/<s:property value="goods.goodsPic"/>" /> <s:file
+										name="upload" label="形象" size="20"
+										onchange="preImg(this.id,'pic');" /></td>
+							</tr>
+							<tr>
+								<td class="align_right">商品类型:</td>
+								<td valign="middle" class="align_left"><s:select
+										name="goods.goodsType" list="#{1:'帽子',2:'衣服',3:'裤子'}" />
+								</td>
+							</tr>
+							<tr>
+								<td class="align_right">商品价格:</td>
+								<td valign="middle" class="align_left"><s:textfield
+										name="goods.goodsPrice" /></td>
+							</tr>
+							<tr>
+								<td class="align_right">商品数量:</td>
+								<td valign="middle" class="align_left"><s:textfield
+										name="goods.goodsNum" />
+								</td>
+							</tr>
+							<tr>
+								<td class="align_right">所属商户:</td>
+								<td valign="middle" class="align_left"><s:property
+										value="#session.Name" /></td>
+							</tr>
+							<tr>
+								<td class="align_right">商品描述:</td>
+								<td valign="middle" class="align_left"><s:textarea
+										rows="10" cols="50" name="goods.goodsDescribe" /></td>
+							</tr>
+							<tr>
+								<td colspan="2"><s:submit value="确认修改" /></td>
+							</tr>
+						</table>
+					</s:form>
 				</div>
 			</div>
 		</div>

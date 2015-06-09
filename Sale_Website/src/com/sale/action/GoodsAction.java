@@ -17,10 +17,12 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.sale.model.Goods;
 import com.sale.model.Seller;
 import com.sale.service.GoodsService;
+import com.sale.service.LoginService;
 
 public class GoodsAction extends ActionSupport {
 	@Resource
 	GoodsService goodsService;
+
 	private Goods goods;
 	private List list;
 	private static final int BUFFER_SIZE = 400 * 400;
@@ -65,31 +67,52 @@ public class GoodsAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
-		return super.execute();
+		return findGoodsListBySeller();
 	}
 
 	public String findGoodsListBySeller() {
 		ActionContext ac = ActionContext.getContext();
 		list = goodsService.getGoodsListBySeller((String) ac.getSession().get(
 				"Id"));
-		System.out.println(list);
 		ac.getSession().put("list", list);
 		return "success";
 	}
 
-	public String add() {
-		/*String path = ServletActionContext.getServletContext().getRealPath(
+	public String addGoods() {
+		String path = ServletActionContext.getServletContext().getRealPath(
 				this.getSavePath())
 				+ "\\" + this.getUploadFileName();		
 		goods.setGoodsPic(this.uploadFileName);// 将上传的文件名称赋值给User类中的photo属性
-		Seller seller=new Seller();
-		seller.setSellerId(123456);
-		goods.setSeller(seller);
 		File target = new File(path); // 定义目标文件对象
 		copy(this.upload, target); // 调用copy()方法，实现文件的写入
-		goodsService.addGoodsBySeller(goods);*/
+		ActionContext ac=ActionContext.getContext();
+		System.out.println(ac.getSession().get("Id"));
+		Seller seller=new Seller(); 
+		seller.setSellerId((String)ac.getSession().get("Id"));
+		goods.setSeller(seller);
+		goodsService.addGoodsBySeller(goods);
 		return "addgoods";
+	}
+	
+	public String findGoodsBygoodsId(){
+		goods=goodsService.getGoodsBygoodsId(goods.getGoodsId());
+		return "goods";
+	}
+	
+	public String updateGoods(){
+		String path = ServletActionContext.getServletContext().getRealPath(
+				this.getSavePath())
+				+ "\\" + this.getUploadFileName();		
+		goods.setGoodsPic(this.uploadFileName);// 将上传的文件名称赋值给User类中的photo属性
+		File target = new File(path); // 定义目标文件对象
+		copy(this.upload, target); // 调用copy()方法，实现文件的写入
+		goodsService.updateGoods(goods);
+		return "update";
+	}
+	
+	public String deleteGoodsBygoodsId(){
+		goodsService.deleteGoodsBygoodsId(goods);
+		return "delete";
 	}
 
 	public Goods getGoods() {
@@ -163,4 +186,5 @@ public class GoodsAction extends ActionSupport {
 	public void setSavePath(String savePath) {
 		this.savePath = savePath;
 	}
+
 }
