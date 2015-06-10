@@ -3,174 +3,166 @@ package com.sale.model;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * Custom entity. @author MyEclipse Persistence Tools
  */
 
-public class Custom  implements java.io.Serializable {
+public class Custom implements java.io.Serializable {
 
+	// Fields
 
-    // Fields    
+	private String customId;
+	private String customPassword;
+	private String customName;
+	private String customBorn;
+	private String customPic;
+	private String customSex;
+	private String customQq;
+	private String customPhone;
+	private String customHometown;
+	private String customLocation;
+	private String customDescribe;
+	private Set shoppingCarts = new HashSet(0);
+	private Set goodsOrders = new HashSet(0);
 
-     private String customId;
-     private String customPassword;
-     private String customName;
-     private String customBorn;
-     private String customPic;
-     private String customSex;
-     private String customQq;
-     private String customPhone;
-     private String customHometown;
-     private String customLocation;
-     private String customDescribe;
-     private Set shoppingCarts = new HashSet(0);
-     private Set goodsOrders = new HashSet(0);
+	// Constructors
 
-
-    // Constructors
-
-    /** default constructor */
-    public Custom() {
-    }
+	/** default constructor */
+	public Custom() {
+	}
 
 	/** minimal constructor */
-    public Custom(String customId, String customPassword, String customName) {
-        this.customId = customId;
-        this.customPassword = customPassword;
-        this.customName = customName;
-    }
-    
-    /** full constructor */
-    public Custom(String customId, String customPassword, String customName, String customBorn, String customPic, String customSex, String customQq, String customPhone, String customHometown, String customLocation, String customDescribe, Set shoppingCarts, Set goodsOrders) {
-        this.customId = customId;
-        this.customPassword = customPassword;
-        this.customName = customName;
-        this.customBorn = customBorn;
-        this.customPic = customPic;
-        this.customSex = customSex;
-        this.customQq = customQq;
-        this.customPhone = customPhone;
-        this.customHometown = customHometown;
-        this.customLocation = customLocation;
-        this.customDescribe = customDescribe;
-        this.shoppingCarts = shoppingCarts;
-        this.goodsOrders = goodsOrders;
-    }
+	public Custom(String customId, String customPassword, String customName) {
+		this.customId = customId;
+		this.customPassword = customPassword;
+		this.customName = customName;
+	}
 
-   
-    // Property accessors
+	/** full constructor */
+	public Custom(String customId, String customPassword, String customName,
+			String customBorn, String customPic, String customSex,
+			String customQq, String customPhone, String customHometown,
+			String customLocation, String customDescribe, Set shoppingCarts,
+			Set goodsOrders) {
+		this.customId = customId;
+		this.customPassword = customPassword;
+		this.customName = customName;
+		this.customBorn = customBorn;
+		this.customPic = customPic;
+		this.customSex = customSex;
+		this.customQq = customQq;
+		this.customPhone = customPhone;
+		this.customHometown = customHometown;
+		this.customLocation = customLocation;
+		this.customDescribe = customDescribe;
+		this.shoppingCarts = shoppingCarts;
+		this.goodsOrders = goodsOrders;
+	}
 
-    public String getCustomId() {
-        return this.customId;
-    }
-    
-    public void setCustomId(String customId) {
-        this.customId = customId;
-    }
+	// Property accessors
 
-    public String getCustomPassword() {
-        return this.customPassword;
-    }
-    
-    public void setCustomPassword(String customPassword) {
-        this.customPassword = customPassword;
-    }
+	public String getCustomId() {
+		return this.customId;
+	}
 
-    public String getCustomName() {
-        return this.customName;
-    }
-    
-    public void setCustomName(String customName) {
-        this.customName = customName;
-    }
+	public void setCustomId(String customId) {
+		this.customId = customId;
+	}
 
-    public String getCustomBorn() {
-        return this.customBorn;
-    }
-    
-    public void setCustomBorn(String customBorn) {
-        this.customBorn = customBorn;
-    }
+	public String getCustomPassword() {
+		return this.customPassword;
+	}
 
-    public String getCustomPic() {
-        return this.customPic;
-    }
-    
-    public void setCustomPic(String customPic) {
-        this.customPic = customPic;
-    }
+	public void setCustomPassword(String customPassword) {
+		this.customPassword = customPassword;
+	}
 
-    public String getCustomSex() {
-        return this.customSex;
-    }
-    
-    public void setCustomSex(String customSex) {
-        this.customSex = customSex;
-    }
+	public String getCustomName() {
+		return this.customName;
+	}
 
-    public String getCustomQq() {
-        return this.customQq;
-    }
-    
-    public void setCustomQq(String customQq) {
-        this.customQq = customQq;
-    }
+	public void setCustomName(String customName) {
+		this.customName = customName;
+	}
 
-    public String getCustomPhone() {
-        return this.customPhone;
-    }
-    
-    public void setCustomPhone(String customPhone) {
-        this.customPhone = customPhone;
-    }
+	public String getCustomBorn() {
+		return this.customBorn;
+	}
 
-    public String getCustomHometown() {
-        return this.customHometown;
-    }
-    
-    public void setCustomHometown(String customHometown) {
-        this.customHometown = customHometown;
-    }
+	public void setCustomBorn(String customBorn) {
+		this.customBorn = customBorn;
+	}
 
-    public String getCustomLocation() {
-        return this.customLocation;
-    }
-    
-    public void setCustomLocation(String customLocation) {
-        this.customLocation = customLocation;
-    }
+	public String getCustomPic() {
+		return this.customPic;
+	}
 
-    public String getCustomDescribe() {
-        return this.customDescribe;
-    }
-    
-    public void setCustomDescribe(String customDescribe) {
-        this.customDescribe = customDescribe;
-    }
+	public void setCustomPic(String customPic) {
+		this.customPic = customPic;
+	}
 
-    public Set getShoppingCarts() {
-        return this.shoppingCarts;
-    }
-    
-    public void setShoppingCarts(Set shoppingCarts) {
-        this.shoppingCarts = shoppingCarts;
-    }
+	public String getCustomSex() {
+		return this.customSex;
+	}
 
-    public Set getGoodsOrders() {
-        return this.goodsOrders;
-    }
-    
-    public void setGoodsOrders(Set goodsOrders) {
-        this.goodsOrders = goodsOrders;
-    }
-   
+	public void setCustomSex(String customSex) {
+		this.customSex = customSex;
+	}
 
+	public String getCustomQq() {
+		return this.customQq;
+	}
 
+	public void setCustomQq(String customQq) {
+		this.customQq = customQq;
+	}
 
+	public String getCustomPhone() {
+		return this.customPhone;
+	}
 
+	public void setCustomPhone(String customPhone) {
+		this.customPhone = customPhone;
+	}
 
+	public String getCustomHometown() {
+		return this.customHometown;
+	}
 
+	public void setCustomHometown(String customHometown) {
+		this.customHometown = customHometown;
+	}
 
+	public String getCustomLocation() {
+		return this.customLocation;
+	}
+
+	public void setCustomLocation(String customLocation) {
+		this.customLocation = customLocation;
+	}
+
+	public String getCustomDescribe() {
+		return this.customDescribe;
+	}
+
+	public void setCustomDescribe(String customDescribe) {
+		this.customDescribe = customDescribe;
+	}
+
+	public Set getShoppingCarts() {
+		return this.shoppingCarts;
+	}
+
+	public void setShoppingCarts(Set shoppingCarts) {
+		this.shoppingCarts = shoppingCarts;
+	}
+
+	public Set getGoodsOrders() {
+		return this.goodsOrders;
+	}
+
+	public void setGoodsOrders(Set goodsOrders) {
+		this.goodsOrders = goodsOrders;
+	}
 
 }

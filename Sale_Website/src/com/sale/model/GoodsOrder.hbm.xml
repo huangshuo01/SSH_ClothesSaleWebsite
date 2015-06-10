@@ -8,7 +8,7 @@
     <class name="com.sale.model.GoodsOrder" table="GoodsOrder" schema="dbo" catalog="ClothesSale">
         <id name="orderId" type="java.lang.Integer">
             <column name="Order_Id" />
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <many-to-one name="custom" class="com.sale.model.Custom" fetch="select">
             <column name="Custom_Id" length="20" not-null="true" />

@@ -124,21 +124,22 @@ public class GoodsDaoImpl implements GoodsDao {
 		session.close();
 	}
 	
-	public List findGoodsBygoodsId(Integer goodsId){
+	public Goods findGoodsBygoodsId(Integer goodsId){
 		Session session = null;
+		Goods goods=new Goods();
 		List list=null;
-		Seller seller = new Seller();
 		String hql = "from Goods where goodsId=?";
 		try {
 			session = sessionFactory.getCurrentSession();
 			Query query = session.createQuery(hql);
 			query.setParameter(0, goodsId);	
 			list = query.list();
+			goods=(Goods)list.get(0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		session.close();
-		return list;
+		return goods;
 	}
 	
 	public void updateGoods(Goods goods){

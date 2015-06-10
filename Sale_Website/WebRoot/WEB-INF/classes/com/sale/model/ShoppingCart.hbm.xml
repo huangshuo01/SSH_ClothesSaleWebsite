@@ -10,12 +10,12 @@
             <column name="ShoppingCart_Id" />
             <generator class="native" />
         </id>
-        <property name="goodsId" type="java.lang.Integer">
-            <column name="Goods_Id" not-null="true" />
-        </property>
-        <property name="customId" type="java.lang.String">
+        <many-to-one name="custom" class="com.sale.model.Custom" fetch="select">
             <column name="Custom_Id" length="20" not-null="true" />
-        </property>
+        </many-to-one>
+        <many-to-one name="goods" class="com.sale.model.Goods" fetch="select">
+            <column name="Goods_Id" not-null="true" />
+        </many-to-one>
         <property name="shoppingNum" type="java.lang.Integer">
             <column name="Shopping_Num" not-null="true" />
         </property>

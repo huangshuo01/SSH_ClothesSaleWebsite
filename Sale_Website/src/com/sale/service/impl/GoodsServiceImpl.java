@@ -50,7 +50,7 @@ public class GoodsServiceImpl implements GoodsService {
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)	
 	public Goods getGoodsBygoodsId(Integer goodsId){
-		return (Goods)goodsDao.findGoodsBygoodsId(goodsId).get(0);
+		return (Goods)goodsDao.findGoodsBygoodsId(goodsId);
 	}
 	
 	public void addGoodsBySeller(Goods goods){
@@ -63,7 +63,7 @@ public class GoodsServiceImpl implements GoodsService {
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)		
 	public void deleteGoodsBygoodsId(Goods goods){
-		goods=(Goods)goodsDao.findGoodsBygoodsId(goods.getGoodsId()).get(0);
+		goods=(Goods)goodsDao.findGoodsBygoodsId(goods.getGoodsId());
 		goodsDao.deleteGoodsBygoodsId(goods);
 	}
 }

@@ -9,8 +9,8 @@ public class ShoppingCart implements java.io.Serializable {
 	// Fields
 
 	private Integer shoppingCartId;
-	private Integer goodsId;
-	private String customId;
+	private Custom custom;
+	private Goods goods;
 	private Integer shoppingNum;
 	private Double shoppingSub;
 
@@ -21,20 +21,20 @@ public class ShoppingCart implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public ShoppingCart(Integer shoppingCartId, Integer goodsId,
-			String customId, Integer shoppingNum) {
+	public ShoppingCart(Integer shoppingCartId, Custom custom, Goods goods,
+			Integer shoppingNum) {
 		this.shoppingCartId = shoppingCartId;
-		this.goodsId = goodsId;
-		this.customId = customId;
+		this.custom = custom;
+		this.goods = goods;
 		this.shoppingNum = shoppingNum;
 	}
 
 	/** full constructor */
-	public ShoppingCart(Integer shoppingCartId, Integer goodsId,
-			String customId, Integer shoppingNum, Double shoppingSub) {
+	public ShoppingCart(Integer shoppingCartId, Custom custom, Goods goods,
+			Integer shoppingNum, Double shoppingSub) {
 		this.shoppingCartId = shoppingCartId;
-		this.goodsId = goodsId;
-		this.customId = customId;
+		this.custom = custom;
+		this.goods = goods;
 		this.shoppingNum = shoppingNum;
 		this.shoppingSub = shoppingSub;
 	}
@@ -49,20 +49,20 @@ public class ShoppingCart implements java.io.Serializable {
 		this.shoppingCartId = shoppingCartId;
 	}
 
-	public Integer getGoodsId() {
-		return this.goodsId;
+	public Custom getCustom() {
+		return this.custom;
 	}
 
-	public void setGoodsId(Integer goodsId) {
-		this.goodsId = goodsId;
+	public void setCustom(Custom custom) {
+		this.custom = custom;
 	}
 
-	public String getCustomId() {
-		return this.customId;
+	public Goods getGoods() {
+		return this.goods;
 	}
 
-	public void setCustomId(String customId) {
-		this.customId = customId;
+	public void setGoods(Goods goods) {
+		this.goods = goods;
 	}
 
 	public Integer getShoppingNum() {

@@ -43,7 +43,7 @@
 							</tr>
 							<tr>
 								<td class="align_right">商品图片:</td>
-								<td class="align_left"><img name="Goods_Pic" id="pic"
+								<td class="align_left"><img name="goods.goodsPic" id="pic"
 									style="width:100px;height:100px;"
 									src="upload/<s:property value="goods.goodsPic"/>" /> <s:file
 										name="upload" label="形象" size="20"
@@ -52,7 +52,7 @@
 							<tr>
 								<td class="align_right">商品类型:</td>
 								<td valign="middle" class="align_left"><s:select
-										name="goods.goodsType" list="#{1:'帽子',2:'衣服',3:'裤子'}" />
+										name="goods.goodsType" list="{'帽子','衣服','裤子'}" />
 								</td>
 							</tr>
 							<tr>

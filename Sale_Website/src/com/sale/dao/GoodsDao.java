@@ -20,7 +20,7 @@ public interface GoodsDao {
 	
 	public abstract void insertGoodsBySeller(Goods goods);
 	
-	public abstract List findGoodsBygoodsId(Integer goodsId);
+	public abstract Goods findGoodsBygoodsId(Integer goodsId);
 	
 	public abstract void updateGoods(Goods goods);
 	

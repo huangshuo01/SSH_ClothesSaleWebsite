@@ -3,145 +3,137 @@ package com.sale.model;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * Goods entity. @author MyEclipse Persistence Tools
  */
 
-public class Goods  implements java.io.Serializable {
+public class Goods implements java.io.Serializable {
 
+	// Fields
 
-    // Fields    
+	private Integer goodsId;
+	private Seller seller;
+	private String goodsName;
+	private String goodsPic;
+	private Double goodsPrice;
+	private Integer goodsNum;
+	private Integer goodsSaleNum;
+	private String goodsType;
+	private String goodsDescribe;
+	private Set shoppingCarts = new HashSet(0);
 
-     private Integer goodsId;
-     private Seller seller;
-     private String goodsName;
-     private String goodsPic;
-     private Double goodsPrice;
-     private Integer goodsNum;
-     private Integer goodsSaleNum;
-     private String goodsType;
-     private String goodsDescribe;
-     private Set shoppingCarts = new HashSet(0);
+	// Constructors
 
-
-    // Constructors
-
-    /** default constructor */
-    public Goods() {
-    }
+	/** default constructor */
+	public Goods() {
+	}
 
 	/** minimal constructor */
-    public Goods(Integer goodsId, String goodsName, Double goodsPrice, Integer goodsNum) {
-        this.goodsId = goodsId;
-        this.goodsName = goodsName;
-        this.goodsPrice = goodsPrice;
-        this.goodsNum = goodsNum;
-    }
-    
-    /** full constructor */
-    public Goods(Integer goodsId, Seller seller, String goodsName, String goodsPic, Double goodsPrice, Integer goodsNum, Integer goodsSaleNum, String goodsType, String goodsDescribe, Set shoppingCarts) {
-        this.goodsId = goodsId;
-        this.seller = seller;
-        this.goodsName = goodsName;
-        this.goodsPic = goodsPic;
-        this.goodsPrice = goodsPrice;
-        this.goodsNum = goodsNum;
-        this.goodsSaleNum = goodsSaleNum;
-        this.goodsType = goodsType;
-        this.goodsDescribe = goodsDescribe;
-        this.shoppingCarts = shoppingCarts;
-    }
+	public Goods(Integer goodsId, String goodsName, Double goodsPrice,
+			Integer goodsNum) {
+		this.goodsId = goodsId;
+		this.goodsName = goodsName;
+		this.goodsPrice = goodsPrice;
+		this.goodsNum = goodsNum;
+	}
 
-   
-    // Property accessors
+	/** full constructor */
+	public Goods(Integer goodsId, Seller seller, String goodsName,
+			String goodsPic, Double goodsPrice, Integer goodsNum,
+			Integer goodsSaleNum, String goodsType, String goodsDescribe,
+			Set shoppingCarts) {
+		this.goodsId = goodsId;
+		this.seller = seller;
+		this.goodsName = goodsName;
+		this.goodsPic = goodsPic;
+		this.goodsPrice = goodsPrice;
+		this.goodsNum = goodsNum;
+		this.goodsSaleNum = goodsSaleNum;
+		this.goodsType = goodsType;
+		this.goodsDescribe = goodsDescribe;
+		this.shoppingCarts = shoppingCarts;
+	}
 
-    public Integer getGoodsId() {
-        return this.goodsId;
-    }
-    
-    public void setGoodsId(Integer goodsId) {
-        this.goodsId = goodsId;
-    }
+	// Property accessors
 
-    public Seller getSeller() {
-        return this.seller;
-    }
-    
-    public void setSeller(Seller seller) {
-        this.seller = seller;
-    }
+	public Integer getGoodsId() {
+		return this.goodsId;
+	}
 
-    public String getGoodsName() {
-        return this.goodsName;
-    }
-    
-    public void setGoodsName(String goodsName) {
-        this.goodsName = goodsName;
-    }
+	public void setGoodsId(Integer goodsId) {
+		this.goodsId = goodsId;
+	}
 
-    public String getGoodsPic() {
-        return this.goodsPic;
-    }
-    
-    public void setGoodsPic(String goodsPic) {
-        this.goodsPic = goodsPic;
-    }
+	public Seller getSeller() {
+		return this.seller;
+	}
 
-    public Double getGoodsPrice() {
-        return this.goodsPrice;
-    }
-    
-    public void setGoodsPrice(Double goodsPrice) {
-        this.goodsPrice = goodsPrice;
-    }
+	public void setSeller(Seller seller) {
+		this.seller = seller;
+	}
 
-    public Integer getGoodsNum() {
-        return this.goodsNum;
-    }
-    
-    public void setGoodsNum(Integer goodsNum) {
-        this.goodsNum = goodsNum;
-    }
+	public String getGoodsName() {
+		return this.goodsName;
+	}
 
-    public Integer getGoodsSaleNum() {
-        return this.goodsSaleNum;
-    }
-    
-    public void setGoodsSaleNum(Integer goodsSaleNum) {
-        this.goodsSaleNum = goodsSaleNum;
-    }
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
 
-    public String getGoodsType() {
-        return this.goodsType;
-    }
-    
-    public void setGoodsType(String goodsType) {
-        this.goodsType = goodsType;
-    }
+	public String getGoodsPic() {
+		return this.goodsPic;
+	}
 
-    public String getGoodsDescribe() {
-        return this.goodsDescribe;
-    }
-    
-    public void setGoodsDescribe(String goodsDescribe) {
-        this.goodsDescribe = goodsDescribe;
-    }
+	public void setGoodsPic(String goodsPic) {
+		this.goodsPic = goodsPic;
+	}
 
-    public Set getShoppingCarts() {
-        return this.shoppingCarts;
-    }
-    
-    public void setShoppingCarts(Set shoppingCarts) {
-        this.shoppingCarts = shoppingCarts;
-    }
-   
+	public Double getGoodsPrice() {
+		return this.goodsPrice;
+	}
 
+	public void setGoodsPrice(Double goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
 
+	public Integer getGoodsNum() {
+		return this.goodsNum;
+	}
 
+	public void setGoodsNum(Integer goodsNum) {
+		this.goodsNum = goodsNum;
+	}
 
+	public Integer getGoodsSaleNum() {
+		return this.goodsSaleNum;
+	}
 
+	public void setGoodsSaleNum(Integer goodsSaleNum) {
+		this.goodsSaleNum = goodsSaleNum;
+	}
 
+	public String getGoodsType() {
+		return this.goodsType;
+	}
 
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	public String getGoodsDescribe() {
+		return this.goodsDescribe;
+	}
+
+	public void setGoodsDescribe(String goodsDescribe) {
+		this.goodsDescribe = goodsDescribe;
+	}
+
+	public Set getShoppingCarts() {
+		return this.shoppingCarts;
+	}
+
+	public void setShoppingCarts(Set shoppingCarts) {
+		this.shoppingCarts = shoppingCarts;
+	}
 
 }

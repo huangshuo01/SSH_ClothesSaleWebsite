@@ -94,8 +94,7 @@ public class GoodsAction extends ActionSupport {
 	
 	public String findGoodsListAll(){
 		ActionContext ac = ActionContext.getContext();
-		String sellerId=(String)ac.getSession().get("Id");
-		pageCount=goodsService.getPageCountBySeller(pageSize,sellerId);
+		pageCount=goodsService.getPageCountAll(pageSize);
         if(pageNo<=0)
         	pageNo=1;
         else if(pageNo>pageCount)
