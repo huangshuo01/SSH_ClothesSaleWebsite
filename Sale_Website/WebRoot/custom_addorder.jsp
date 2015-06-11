@@ -50,17 +50,9 @@
 								</td>
 								<td><s:property value="goodsType" />
 								</td>
-								<td>￥<s:property value="goodsPrice" />
+								<td><span>￥</span> <s:property value="goodsPrice" />
 								</td>
-								<td><a
-									href="ShopCart!updateShopCart.action?snum=<s:property value="shoppingNum-1"/>
-									&sid=<s:property value="shoppingCartId"/>"><img
-										Style="width:15px;height:15px" src="images/jian.png" /> </a>
-									&nbsp;&nbsp;<s:textfield name="shoppingNum" size="4"
-										class="inputBg" style="text-align:center" /><a
-									href="ShopCart!updateShopCart.action?snum=<s:property value="shoppingNum+1"/>
-					 				&sid=<s:property value="shoppingCartId"/>">&nbsp;&nbsp;<img
-										Style="width:15px;height:15px" src="images/jia.png" /> </a>
+								<td><s:property value="shoppingNum" />
 								</td>
 								<td><s:property value="shoppingSub" /></td>
 								<td><a
@@ -76,20 +68,48 @@
 										value="scartsub" /> </span>
 							</td>
 							<td class="align_right"><a
-								href="ShopCart!deleteShopCartByCustomId.action">清空购物车</a>
+								href="ShopCart!deleteShopCartByCustomId.action">清空全部</a>
 							</td>
 						</tr>
 					</table>
 					<input type="hidden" name="step" value="update_cart" />
 				</s:form>
-				<div class="operation">
-					<span class="continue_btn"><a href="#"><img
-							src="images/cart_btn1.jpg" alt="continue" /> </a> </span> <span
-						class="end_btn"><a href="ShopCart!findShopCartToOrder.action"><img
-							src="images/cart_btn2.jpg" alt="checkout" /> </a> </span>
-				</div>
 			</div>
 		</div>
+		<s:form action="Order!addOrder.action" method="post" name="orderform" id="orderform" theme="simple">
+			<div class="flowBox">
+				<h6>
+					<span>收货人信息</span>
+				</h6>
+				<table width="99%" align="center">
+					<tr>
+						<td class="align_left">收货人姓名:</td>
+						<td class="align_left"><s:textfield name="order.orderName" /><span>*</span>
+						</td>
+
+					</tr>
+					<tr>
+						<td class="align_left">电话:</td>
+						<td class="align_left"><s:textfield name="order.orderPhone" /><span>*</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="align_left">收货地址:</td>
+						<td class="align_left"><s:textfield name="order.orderAddress"
+								Style="width:300px" /><span>*</span>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="flowBox">
+				<table width="99%" align="center">
+					<tr>
+						<td><input type="button" style="background: url('images/cart_btn4.jpg');width:145px;height:40px;"
+							onclick="this.form.submit();" /></td>
+					</tr>
+				</table>
+			</div>
+		</s:form>
 	</div>
 </body>
 </html>

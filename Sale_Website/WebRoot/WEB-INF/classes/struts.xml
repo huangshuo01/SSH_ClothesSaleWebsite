@@ -25,6 +25,7 @@
 				<param name="redirect">addShopCart</param>
 			</result>
 			<result name="shopcart">/custom_scart.jsp</result>
+			<result name="order">/custom_addorder.jsp</result>
 			<result name="success" type="redirectAction">
 				<param name="actionName">ShopCart</param>
 				<param name="refresh">updatecart</param>
@@ -33,6 +34,9 @@
 				<param name="actionName">ShopCart</param>
 				<param name="refresh">deletecart</param>
 			</result>
+		</action>
+		<action name="Order" class="orderAction">
+			<result name="addOrder">/index.jsp</result>
 		</action>
 	</package>
 </struts>    

@@ -46,11 +46,5 @@
             </key>
             <one-to-many class="com.sale.model.Goods" />
         </set>
-        <set name="goodsOrders" inverse="true">
-            <key>
-                <column name="Seller_Id" length="20" />
-            </key>
-            <one-to-many class="com.sale.model.GoodsOrder" />
-        </set>
     </class>
 </hibernate-mapping>

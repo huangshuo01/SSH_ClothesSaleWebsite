@@ -23,7 +23,6 @@ public class Custom implements java.io.Serializable {
 	private String customLocation;
 	private String customDescribe;
 	private Set shoppingCarts = new HashSet(0);
-	private Set goodsOrders = new HashSet(0);
 
 	// Constructors
 
@@ -42,8 +41,7 @@ public class Custom implements java.io.Serializable {
 	public Custom(String customId, String customPassword, String customName,
 			String customBorn, String customPic, String customSex,
 			String customQq, String customPhone, String customHometown,
-			String customLocation, String customDescribe, Set shoppingCarts,
-			Set goodsOrders) {
+			String customLocation, String customDescribe, Set shoppingCarts) {
 		this.customId = customId;
 		this.customPassword = customPassword;
 		this.customName = customName;
@@ -56,7 +54,6 @@ public class Custom implements java.io.Serializable {
 		this.customLocation = customLocation;
 		this.customDescribe = customDescribe;
 		this.shoppingCarts = shoppingCarts;
-		this.goodsOrders = goodsOrders;
 	}
 
 	// Property accessors
@@ -155,14 +152,6 @@ public class Custom implements java.io.Serializable {
 
 	public void setShoppingCarts(Set shoppingCarts) {
 		this.shoppingCarts = shoppingCarts;
-	}
-
-	public Set getGoodsOrders() {
-		return this.goodsOrders;
-	}
-
-	public void setGoodsOrders(Set goodsOrders) {
-		this.goodsOrders = goodsOrders;
 	}
 
 }

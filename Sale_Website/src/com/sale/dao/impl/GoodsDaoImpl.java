@@ -110,7 +110,7 @@ public class GoodsDaoImpl implements GoodsDao {
 		return null;
 	}
 
-	public void insertGoodsBySeller(Goods goods){
+	public void addGoodsBySeller(Goods goods){
 		Session session = null;
 		Transaction tx = null;
 		try {

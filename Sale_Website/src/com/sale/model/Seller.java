@@ -23,7 +23,6 @@ public class Seller implements java.io.Serializable {
 	private String sellerLocation;
 	private String sellerDescribe;
 	private Set goodses = new HashSet(0);
-	private Set goodsOrders = new HashSet(0);
 
 	// Constructors
 
@@ -42,8 +41,7 @@ public class Seller implements java.io.Serializable {
 	public Seller(String sellerId, String sellerPassword, String sellerName,
 			String sellerBorn, String sellerPic, String sellerSex,
 			String sellerQq, String sellerPhone, String sellerHometown,
-			String sellerLocation, String sellerDescribe, Set goodses,
-			Set goodsOrders) {
+			String sellerLocation, String sellerDescribe, Set goodses) {
 		this.sellerId = sellerId;
 		this.sellerPassword = sellerPassword;
 		this.sellerName = sellerName;
@@ -56,7 +54,6 @@ public class Seller implements java.io.Serializable {
 		this.sellerLocation = sellerLocation;
 		this.sellerDescribe = sellerDescribe;
 		this.goodses = goodses;
-		this.goodsOrders = goodsOrders;
 	}
 
 	// Property accessors
@@ -155,14 +152,6 @@ public class Seller implements java.io.Serializable {
 
 	public void setGoodses(Set goodses) {
 		this.goodses = goodses;
-	}
-
-	public Set getGoodsOrders() {
-		return this.goodsOrders;
-	}
-
-	public void setGoodsOrders(Set goodsOrders) {
-		this.goodsOrders = goodsOrders;
 	}
 
 }

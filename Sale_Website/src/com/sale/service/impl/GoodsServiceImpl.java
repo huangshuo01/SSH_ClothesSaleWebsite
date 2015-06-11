@@ -54,7 +54,7 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 	
 	public void addGoodsBySeller(Goods goods){
-		goodsDao.insertGoodsBySeller(goods);
+		goodsDao.addGoodsBySeller(goods);
 	}
 	
 	public void updateGoods(Goods goods){

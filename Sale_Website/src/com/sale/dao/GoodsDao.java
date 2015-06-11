@@ -18,7 +18,7 @@ public interface GoodsDao {
 	
 	public abstract List findGoodsListBySellerType(int Id ,String Type);
 	
-	public abstract void insertGoodsBySeller(Goods goods);
+	public abstract void addGoodsBySeller(Goods goods);
 	
 	public abstract Goods findGoodsBygoodsId(Integer goodsId);
 	

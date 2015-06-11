@@ -54,6 +54,19 @@ public class ShopCartAction extends ActionSupport {
 		}
 		return "shopcart";
 	}
+	
+	public String findShopCartToOrder() {
+		scartsub=0.0;
+		ActionContext ac = ActionContext.getContext();
+		sinfolist = shopCartService.getShopCartByCustomId((String) ac
+				.getSession().get("Id"));
+		for (int i = 0; i < sinfolist.size(); i++) {
+			ScartInfo sinfo = (ScartInfo) sinfolist.get(i);
+			scartsub += sinfo.getShoppingSub();
+		}
+		ac.getSession().put("sinfolist", sinfolist);
+		return "order";
+	}
 
 	public String updateShopCart(){
 		shopCartService.updateShopCart(sid, snum);

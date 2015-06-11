@@ -11,6 +11,7 @@ public class ScartInfo implements java.io.Serializable{
     private String goodsPic;
     private Double goodsPrice;
     private String goodsType;
+    private String sellerId;
 	/**
 	 * @return the shoppingCartId
 	 */
@@ -130,5 +131,17 @@ public class ScartInfo implements java.io.Serializable{
 	 */
 	public void setGoodsType(String goodsType) {
 		this.goodsType = goodsType;
+	}
+	/**
+	 * @return the sellerId
+	 */
+	public String getSellerId() {
+		return sellerId;
+	}
+	/**
+	 * @param sellerId the sellerId to set
+	 */
+	public void setSellerId(String sellerId) {
+		this.sellerId = sellerId;
 	}
 }

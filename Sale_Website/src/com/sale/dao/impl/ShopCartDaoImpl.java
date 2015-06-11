@@ -77,6 +77,7 @@ public class ShopCartDaoImpl implements ShopCartDao {
 				sinfo.setGoodsPic(goods.getGoodsPic());
 				sinfo.setGoodsPrice(goods.getGoodsPrice());
 				sinfo.setGoodsType(goods.getGoodsType());
+				sinfo.setSellerId(goods.getSeller().getSellerId());
 				sinfo.setShoppingCartId(scart.getShoppingCartId());
 				sinfo.setShoppingNum(scart.getShoppingNum());
 				sinfo.setShoppingSub(scart.getShoppingSub());
