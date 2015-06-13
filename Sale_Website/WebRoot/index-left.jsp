@@ -19,26 +19,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	<div class="pro_menu">
                 <ul>
                 	<li><a href="#" title=""><span>帽子</span></a>
-                	<ul>
-                	<li><a>新款</a></li>
-                	<li><a>旧款</a></li>             	
-                	</ul>
                 	</li>
                 </ul>
                 <ul>
                 	<li><a href="#" title=""><span>衣服</span></a>
-                	<ul>
-                	<li><a>新款</a></li>
-                	<li><a>旧款</a></li>
-                	</ul>
                 	</li>
                 </ul>
                 <ul>
                 	<li><a href="#" title=""><span>裤子</span></a>
-                	<ul>
-                	<li><a>新款</a></li>
-                	<li><a>旧款</a></li>
-                	</ul>
                 	</li>
                 </ul>
             </div>

@@ -27,32 +27,33 @@
 						<span>商品浏览</span><a href="#" title=""></a>
 					</div>
 					<s:iterator value="list" status="status">
-						<div class="pro_con1">
-							<table>
-								<tr class="pro_img">
-									<td><a href="#" title=""><img
-											Style="width:150px; height:160px;"
-											src="upload/<s:property value="goodsPic"/>" alt="产品图片" /> </a>
-									</td>
-								</tr>
-								<tr class="pro_name">
-									<td><a href="#" title="">商品名:<s:property
-												value="goodsName" /> <s:hidden name="goodsId" /> </a>
-									</td>
-								</tr>
-								<tr class="pro_price">
-									<td>单价: <span>￥</span> <s:property value="goodsPrice" />
-									</td>
-								</tr>
-								<tr class="pro_custom">
-									<td><a
-										href="ShopCart!addShopCart.action?goods.goodsId=<s:property value="goodsId"/>">
-											<img style="text-align:center;:130px;height:30px;"
-											src="images/incart.png" /> </a>
-									</td>
-								</tr>
-							</table>
+
+						<div class="right_box4">
+							<div class="con_pic4">
+								<a href="#" title=""><img
+									src="upload/<s:property value="goodsPic"/>" alt="图片名称" /> </a>
+							</div>
+							<div class="con_txt3">
+								<p Style="float: left;">
+									<a href="#"><s:property value="goodsName" /> </a>
+								</p>
+								<s:hidden name="goodsId" />
+								<p Style="float: right; margin-right: 3px;">
+									￥
+									<s:property value="goodsPrice" />
+								</p>
+							</div>
+							<div class="con_txt4">
+								<a
+									href="ShopCart!addShopCart.action?goods.goodsId=<s:property value="goodsId"/>">
+									<img style="text-align:center; width:95px;height:28px;"
+									src="images/addcart.png" /> </a> <a href="#"> <img
+									style="text-align:center; width:67px;height:28px;"
+									src="images/shoucan.png" /> </a>
+							</div>
 						</div>
+
+
 					</s:iterator>
 				</div>
 				<table border="0" align="left" cellpadding="0" cellspacing="0">

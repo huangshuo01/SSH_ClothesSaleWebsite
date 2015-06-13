@@ -18,6 +18,7 @@
 				<param name="redirect">delete</param>
 			</result>
 			<result name="goodslist">/goods.jsp</result>
+			<result name="index">/index.jsp</result>
 		</action>
 		<action name="ShopCart" class="shopCartAction">
 			<result name="addShopCart" type="redirectAction">
@@ -37,6 +38,10 @@
 		</action>
 		<action name="Order" class="orderAction">
 			<result name="addOrder">/index.jsp</result>
+			<result name="sellerorder">/seller_orderlist.jsp</result>
+			<result name="customorder">/custom_orderlist.jsp</result>
+			<result name="selleroinfo">/seller_orderinfo.jsp</result>	
+			<result name="customoinfo">/custom_orderinfo.jsp</result>			
 		</action>
 	</package>
 </struts>    

@@ -28,9 +28,9 @@ public class ShopCartAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		if(refresh.equals("updatecart"))
-			return findShopCartByCustomId();
+			return findShopCart();
 		else if(refresh.equals("deletecart"))
-			return findShopCartByCustomId();
+			return findShopCart();
 		else
 			return null;
 	}
@@ -43,7 +43,7 @@ public class ShopCartAction extends ActionSupport {
 		return "addShopCart";
 	}
 
-	public String findShopCartByCustomId() {
+	public String findShopCart() {
 		scartsub=0.0;
 		ActionContext ac = ActionContext.getContext();
 		sinfolist = shopCartService.getShopCartByCustomId((String) ac
@@ -73,12 +73,12 @@ public class ShopCartAction extends ActionSupport {
 		return "success";
 	}
 	
-	public String deleteShopCartById(){
+	public String deleteShopCart(){
 		shopCartService.deleteShopCartById(sid);
 		return "deleteShopCart";
 	}
 	
-	public String deleteShopCartByCustomId(){
+	public String deleteShopCartByCustom(){
 		ActionContext ac=ActionContext.getContext();
 		shopCartService.deleteShopCartByCustomId((String)ac.getSession().get("Id"));
 		return "deleteShopCart";

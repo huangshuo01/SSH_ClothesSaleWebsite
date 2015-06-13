@@ -11,5 +11,12 @@ public interface OrderDao {
 	public abstract void addOrder(Orders order);
 	
 	public abstract void addOrderInfo(OrderInfo oinfo);
+	
+	public abstract List findOrderListByCustomId(String customId);
+	
+	public abstract List findOrderListBySellerId(String sellerId);
 
+	public abstract List findOrderInfoByOrderId(int OrderId);
+	
+	public abstract Orders findOrdersById(int OrderId);
 }

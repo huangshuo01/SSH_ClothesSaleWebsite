@@ -45,7 +45,7 @@
 .right_con3 .con_pic3 span .img2 { width:80px; height:18px; position:absolute; top:90px; *top:93px; _top:93px;left:86px; }
 
 .index_box_3 .right_box4 { width:168px; margin:8px 5px 0 5px; border:1px solid #e4e4e4; float:left;}
-.index_box_3 .right_box4 img { width:166px; height:158px; border:1px solid #e4e4e4; }
-.index_box_3 .con_txt4 { width:168px; height:29px; line-height:29px; text-align:center; background:url(../images/index_bg1.jpg) no-repeat; }
-.index_box_3 .con_txt4 a { color:#343434!important; font-size:14px; font-weight:bold; }
+.index_box_3 .right_box4 img { width:166px; height:158px; }
+.index_box_3 .con_txt3 { width:168px; height:20px; baline-height:29px;font-size:12px; }
+.index_box_3 .con_txt4 { width:168px; height:29px; baline-height:29px;font-size:12px; }
 

@@ -14,6 +14,10 @@ public interface GoodsService {
 	
 	public abstract List getGoodsListAllByTime();
 	
+	public abstract List getGoodsListTop4ByTime();
+	
+	public abstract List getGoodsListTop4BySaleNum();
+	
 	public abstract List getGoodsListBySeller(String Id,int pageNo,int pageSize);
 	
 	public abstract List getGoodsListBySellerType(int Id ,String Type);

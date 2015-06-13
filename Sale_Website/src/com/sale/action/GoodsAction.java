@@ -10,6 +10,8 @@ import java.io.OutputStream;
 import java.util.List;
 import java.util.Random;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -25,6 +27,8 @@ public class GoodsAction extends ActionSupport {
 		
 	private Goods goods;
 	private List list;
+	private List timelist;
+	private List salelist;
 	private int pageNo = 1;
 	private int pageSize = 4;
 	private int pageCount;
@@ -120,7 +124,7 @@ public class GoodsAction extends ActionSupport {
 		return "addgoods";
 	}
 	
-	public String findGoodsBygoodsId(){
+	public String findGoods(){
 		goods=goodsService.getGoodsBygoodsId(goods.getGoodsId());
 		return "goods";
 	}
@@ -136,9 +140,18 @@ public class GoodsAction extends ActionSupport {
 		return "update";
 	}
 	
-	public String deleteGoodsBygoodsId(){
+	public String deleteGoods(){
 		goodsService.deleteGoodsBygoodsId(goods);
 		return "delete";
+	}
+	
+	public String loadindex(){
+		System.out.println("successfully");
+		timelist=goodsService.getGoodsListTop4ByTime();
+		salelist=goodsService.getGoodsListTop4BySaleNum();
+		HttpServletRequest request = ServletActionContext.getRequest();
+		request.getSession().setAttribute("load", "false");
+		return "index";
 	}
 
 	public Goods getGoods() {
@@ -267,6 +280,34 @@ public class GoodsAction extends ActionSupport {
 	 */
 	public void setRedirect(String redirect) {
 		this.redirect = redirect;
+	}
+
+	/**
+	 * @return the timelist
+	 */
+	public List getTimelist() {
+		return timelist;
+	}
+
+	/**
+	 * @param timelist the timelist to set
+	 */
+	public void setTimelist(List timelist) {
+		this.timelist = timelist;
+	}
+
+	/**
+	 * @return the salelist
+	 */
+	public List getSalelist() {
+		return salelist;
+	}
+
+	/**
+	 * @param salelist the salelist to set
+	 */
+	public void setSalelist(List salelist) {
+		this.salelist = salelist;
 	}
 
 }

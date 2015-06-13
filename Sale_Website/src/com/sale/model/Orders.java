@@ -1,5 +1,6 @@
 package com.sale.model;
 
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +19,7 @@ public class Orders implements java.io.Serializable {
 	private Double orderSub;
 	private String sellerId;
 	private String customId;
+	private Timestamp orderTime;
 	private Set orderInfos = new HashSet(0);
 
 	// Constructors
@@ -29,7 +31,7 @@ public class Orders implements java.io.Serializable {
 	/** minimal constructor */
 	public Orders(Integer orderId, String orderName, String orderPhone,
 			String orderAddress, Double orderSub, String sellerId,
-			String customId) {
+			String customId, Timestamp orderTime) {
 		this.orderId = orderId;
 		this.orderName = orderName;
 		this.orderPhone = orderPhone;
@@ -37,18 +39,20 @@ public class Orders implements java.io.Serializable {
 		this.orderSub = orderSub;
 		this.sellerId = sellerId;
 		this.customId = customId;
+		this.orderTime = orderTime;
 	}
 
 	/** full constructor */
 	public Orders(Integer orderId, String orderName, String orderPhone,
 			String orderAddress, Double orderSub, String sellerId,
-			String customId, Set orderInfos) {
+			Timestamp orderTime, String customId, Set orderInfos) {
 		this.orderId = orderId;
 		this.orderName = orderName;
 		this.orderPhone = orderPhone;
 		this.orderAddress = orderAddress;
 		this.orderSub = orderSub;
 		this.sellerId = sellerId;
+		this.orderTime = orderTime;
 		this.customId = customId;
 		this.orderInfos = orderInfos;
 	}
@@ -117,6 +121,21 @@ public class Orders implements java.io.Serializable {
 
 	public void setOrderInfos(Set orderInfos) {
 		this.orderInfos = orderInfos;
+	}
+
+	/**
+	 * @return the orderTime
+	 */
+	public Timestamp getOrderTime() {
+		return orderTime;
+	}
+
+	/**
+	 * @param orderTime
+	 *            the orderTime to set
+	 */
+	public void setOrderTime(Timestamp orderTime) {
+		this.orderTime = orderTime;
 	}
 
 }

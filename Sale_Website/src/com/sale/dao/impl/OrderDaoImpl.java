@@ -1,14 +1,11 @@
 package com.sale.dao.impl;
 
 import java.util.List;
-
 import javax.annotation.Resource;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-
 import com.sale.dao.OrderDao;
 import com.sale.model.OrderInfo;
 import com.sale.model.Orders;
@@ -61,5 +58,71 @@ public class OrderDaoImpl implements OrderDao {
 			e.printStackTrace();
 		}
 		session.close();
+	}
+	
+	public List findOrderListByCustomId(String customId){
+		Session session = null;
+		List list = null;
+		String hql = "from Orders where customId=?";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+			query.setParameter(0, customId);
+			list = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		return list;
+	}
+	
+	public List findOrderListBySellerId(String sellerId){
+		Session session = null;
+		List list = null;
+		String hql = "from Orders where sellerId=?";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+			query.setParameter(0, sellerId);
+			list = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		return list;
+	}
+	
+	public List findOrderInfoByOrderId(int OrderId){
+		Session session = null;
+		List list = null;
+		String hql = "from OrderInfo where orders.orderId=?";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+			query.setParameter(0,OrderId);
+			list = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		return list;
+	}
+	
+	public Orders findOrdersById(int OrderId){
+		Session session = null;
+		List list = null;
+		Orders order=new Orders();
+		String hql = "from Orders where orderId=?";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+			query.setParameter(0,OrderId);
+			list = query.list();
+			order=(Orders)list.get(0);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		return order;
 	}
 }

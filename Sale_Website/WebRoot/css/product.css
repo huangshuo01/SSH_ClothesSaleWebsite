@@ -3,7 +3,7 @@
 .pro_content .con_left { width:210px; float:left; background:#fff3f3; }
 .pro_content .con_right { width:722px; margin:0px 0px 30px 8px; float:left; }
 .con_left { background:#FFF!important; }
-.menu_top { background:url(../images/product_class_bg.jpg) no-repeat; width:210px; height:29px; line-height:29px; }
+.menu_top { background:url(../images/product_class.jpg) no-repeat; width:210px; height:29px; line-height:29px; }
 .menu_top span { padding-left:18px; font-size:14px; font-weight:bold; color:#FFF; }
 .pro_menu { margin-bottom:8px; border:2px solid #a21a1e; border-top:none; width:206px; }
 .pro_menu ul li { border-bottom:1px solid #fff3f3; line-height:37px; height:37px; background:url(../images/product_icon1.jpg) no-repeat 175px 14px; }

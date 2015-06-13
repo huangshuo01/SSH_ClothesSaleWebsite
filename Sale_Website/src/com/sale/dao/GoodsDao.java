@@ -14,6 +14,10 @@ public interface GoodsDao {
 	
 	public abstract List findGoodsListAllByTime();
 	
+	public abstract List findGoodsListTop4ByTime();
+	
+	public abstract List findGoodsListTop4BySaleNum();
+	
 	public abstract List findGoodsListBySeller(String Id,int pageNo,int pageSize);
 	
 	public abstract List findGoodsListBySellerType(int Id ,String Type);

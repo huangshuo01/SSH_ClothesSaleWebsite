@@ -28,6 +28,9 @@
         <property name="customId" type="java.lang.String">
             <column name="Custom_Id" length="20" not-null="true" />
         </property>
+        <property name="orderTime" type="java.sql.Timestamp">
+            <column name="Order_Time" length="23" />
+        </property>
         <set name="orderInfos" inverse="true">
             <key>
                 <column name="Order_Id" not-null="true" />

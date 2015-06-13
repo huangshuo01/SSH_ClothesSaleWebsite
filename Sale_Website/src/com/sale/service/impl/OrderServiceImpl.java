@@ -24,6 +24,8 @@ public class OrderServiceImpl implements OrderService {
 			order.setOrderName(orderA.getOrderName());
 			order.setOrderPhone(orderA.getOrderPhone());
 			order.setCustomId(customId);
+			order.setOrderTime(new java.sql.Timestamp(new java.util.Date()
+					.getTime()));
 			order.setSellerId((String) sellerlist.get(i));
 			Double sub = 0.0;
 			for (int m = 0; m < sinfolist.size(); m++) {
@@ -35,14 +37,6 @@ public class OrderServiceImpl implements OrderService {
 			}
 			order.setOrderSub(sub);
 			orderDao.addOrder(order);
-			/*
-			 * System.out.println(order.getCustomId());
-			 * System.out.println(order.getOrderAddress());
-			 * System.out.println(order.getOrderName());
-			 * System.out.println(order.getSellerId());
-			 * System.out.println(order.getOrderSub());
-			 * System.out.println(order.getOrderPhone());
-			 */
 			for (int j = 0; j < sinfolist.size(); j++) {
 				OrderInfo oinfo = new OrderInfo();
 				ScartInfo sinfo = new ScartInfo();
@@ -57,18 +51,29 @@ public class OrderServiceImpl implements OrderService {
 					oinfo.setOrders(order);
 					orderDao.addOrderInfo(oinfo);
 				}
-				/*
-				 * System.out.println(oinfo.getOinfoName());
-				 * System.out.println(oinfo.getOinfoPic());
-				 * System.out.println(oinfo.getOinfoType());
-				 * System.out.println(oinfo.getOinfoNum());
-				 * System.out.println(oinfo.getOinfoPrice());
-				 * System.out.println(oinfo.getOinfoSub());
-				 * System.out.println();
-				 */
 			}
-			/* System.out.println(); */
 		}
+	}
+
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public List getOrderListByCustomId(String customId) {
+		return orderDao.findOrderListByCustomId(customId);
+	}
+
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public List getOrderListBySellerId(String sellerId) {
+		return orderDao.findOrderListBySellerId(sellerId);
+		
+	}
+	
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public List getOrderInfoByOrderId(int OrderId){
+		return orderDao.findOrderInfoByOrderId(OrderId);
+	}
+	
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public Orders getOrdersById(int OrderId){
+		return orderDao.findOrdersById(OrderId);
 	}
 
 }

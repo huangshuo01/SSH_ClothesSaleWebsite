@@ -17,28 +17,100 @@ public class OrderAction extends ActionSupport {
 	@Resource
 	OrderService orderService;
 	private Orders order;
+	private List orderlist;
+	private List oinfolist;
+	private int orderId;
+
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 		return super.execute();
 	}
-	public String addOrder(){
-		ActionContext ac=ActionContext.getContext();
-		List list=(List)ac.getSession().get("sinfolist");
-		String customId=(String)ac.getSession().get("Id");
-		orderService.addOrder(list,order,customId);
+
+	public String addOrder() {
+		ActionContext ac = ActionContext.getContext();
+		List list = (List) ac.getSession().get("sinfolist");
+		String customId = (String) ac.getSession().get("Id");
+		orderService.addOrder(list, order, customId);
 		return "addOrder";
 	}
+
+	public String findOrderListBySeller() {
+		ActionContext ac = ActionContext.getContext();
+		orderlist = orderService.getOrderListBySellerId((String) ac
+				.getSession().get("Id"));
+		return "sellerorder";
+	}
+
+	public String findOrderListByCustom() {
+		ActionContext ac = ActionContext.getContext();
+		orderlist = orderService.getOrderListByCustomId((String) ac
+				.getSession().get("Id"));
+		return "customorder";
+	}
+
+	public String findOrderInfoBySellerOrder() {
+		oinfolist = orderService.getOrderInfoByOrderId(orderId);
+		order=orderService.getOrdersById(orderId);
+		return "selleroinfo";
+	}
+	
+	public String findOrderInfoByCustomOrder() {
+		oinfolist = orderService.getOrderInfoByOrderId(orderId);
+		order=orderService.getOrdersById(orderId);
+		return "customoinfo";
+	}
+
 	/**
 	 * @return the order
 	 */
 	public Orders getOrder() {
 		return order;
 	}
+
 	/**
-	 * @param order the order to set
+	 * @param order
+	 *            the order to set
 	 */
 	public void setOrder(Orders order) {
 		this.order = order;
+	}
+
+	/**
+	 * @return the orderlist
+	 */
+	public List getOrderlist() {
+		return orderlist;
+	}
+
+	/**
+	 * @param orderlist
+	 *            the orderlist to set
+	 */
+	public void setOrderlist(List orderlist) {
+		this.orderlist = orderlist;
+	}
+
+	public int getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	/**
+	 * @return the oinfolist
+	 */
+	public List getOinfolist() {
+		return oinfolist;
+	}
+
+	/**
+	 * @param oinfolist
+	 *            the oinfolist to set
+	 */
+	public void setOinfolist(List oinfolist) {
+		this.oinfolist = oinfolist;
 	}
 }

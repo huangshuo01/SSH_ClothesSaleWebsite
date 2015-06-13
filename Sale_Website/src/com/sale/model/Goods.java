@@ -1,5 +1,6 @@
 package com.sale.model;
 
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ public class Goods implements java.io.Serializable {
 	private Integer goodsSaleNum;
 	private String goodsType;
 	private String goodsDescribe;
+	private Timestamp goodsTime;
 	private Set shoppingCarts = new HashSet(0);
 
 	// Constructors
@@ -41,7 +43,7 @@ public class Goods implements java.io.Serializable {
 	public Goods(Integer goodsId, Seller seller, String goodsName,
 			String goodsPic, Double goodsPrice, Integer goodsNum,
 			Integer goodsSaleNum, String goodsType, String goodsDescribe,
-			Set shoppingCarts) {
+			Timestamp goodsTime, Set shoppingCarts) {
 		this.goodsId = goodsId;
 		this.seller = seller;
 		this.goodsName = goodsName;
@@ -51,6 +53,7 @@ public class Goods implements java.io.Serializable {
 		this.goodsSaleNum = goodsSaleNum;
 		this.goodsType = goodsType;
 		this.goodsDescribe = goodsDescribe;
+		this.goodsTime =goodsTime;
 		this.shoppingCarts = shoppingCarts;
 	}
 
@@ -134,6 +137,14 @@ public class Goods implements java.io.Serializable {
 
 	public void setShoppingCarts(Set shoppingCarts) {
 		this.shoppingCarts = shoppingCarts;
+	}
+
+	public Timestamp getGoodsTime() {
+		return goodsTime;
+	}
+
+	public void setGoodsTime(Timestamp goodsTime) {
+		this.goodsTime = goodsTime;
 	}
 
 }

@@ -37,6 +37,13 @@ function login() {
 		loginfrm.action = "Login!adminLogin.action"
 	}
 }
+function getdata(){
+	var i=0;
+	if(i==j){
+	window.location.href="Goods!loadindex.action";
+	}
+	j++;
+	}
 function addorder() {
 	orderform.action = "OrderServlet?method=addorder"
 	alert("successful insert ");

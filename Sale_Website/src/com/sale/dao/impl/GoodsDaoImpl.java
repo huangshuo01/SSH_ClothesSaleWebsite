@@ -85,6 +85,40 @@ public class GoodsDaoImpl implements GoodsDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public List findGoodsListTop4ByTime(){
+		Session session = null;
+		List list=null;
+		Seller seller = new Seller();
+		String hql = "from Goods order by goodsTime desc";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+            query.setMaxResults(4);
+			list = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		return list;
+	}
+	
+	public List findGoodsListTop4BySaleNum(){
+		Session session = null;
+		List list=null;
+		Seller seller = new Seller();
+		String hql = "from Goods order by goodsSaleNum desc";
+		try {
+			session = sessionFactory.getCurrentSession();
+			Query query = session.createQuery(hql);
+            query.setMaxResults(4);
+			list = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+		return list;
+	}
 
 	public List findGoodsListBySeller(String Id,int pageNo,int pageSize) {
 		Session session = null;

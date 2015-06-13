@@ -25,7 +25,7 @@
 						href="UserServlet?method=selectInfo&username=<%=request.getSession().getAttribute("loginname")%>"
 						target="showinfo">个人信息</a></li>
 					<li class="user_icon2"><a
-						href="OrderServlet?method=selectcustomorderlist" target="showinfo">我的订单</a>
+						href="Order!findOrderListByCustom.action" >我的订单</a>
 					</li>
 				</ul>
 				<div class="user_logout">

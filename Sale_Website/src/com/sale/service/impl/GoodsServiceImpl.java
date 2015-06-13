@@ -38,6 +38,16 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public List getGoodsListTop4ByTime(){
+		return goodsDao.findGoodsListTop4ByTime();
+	};
+	
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public List getGoodsListTop4BySaleNum(){
+		return goodsDao.findGoodsListTop4BySaleNum();
+	};
+	
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
 	public List getGoodsListBySeller(String Id,int pageNo,int pageSize) {
 		return goodsDao.findGoodsListBySeller(Id,pageNo, pageSize);
 	}

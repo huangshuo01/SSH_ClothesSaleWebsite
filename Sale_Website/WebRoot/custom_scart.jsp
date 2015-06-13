@@ -64,7 +64,7 @@
 								</td>
 								<td><s:property value="shoppingSub" /></td>
 								<td><a
-									href="ShopCart!deleteShopCartById.action?sid=<s:property value="shoppingCartId"/>"
+									href="ShopCart!deleteShopCart.action?sid=<s:property value="shoppingCartId"/>"
 									class="red_a">删除</a></td>
 							</tr>
 						</s:iterator>
@@ -76,7 +76,7 @@
 										value="scartsub" /> </span>
 							</td>
 							<td class="align_right"><a
-								href="ShopCart!deleteShopCartByCustomId.action">清空购物车</a>
+								href="ShopCart!deleteShopCartByCustom.action">清空购物车</a>
 							</td>
 						</tr>
 					</table>

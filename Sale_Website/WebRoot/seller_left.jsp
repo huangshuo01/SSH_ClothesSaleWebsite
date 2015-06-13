@@ -26,13 +26,12 @@
 					href="Goods!findGoodsListBySeller.action">我的店铺</a>
 				</li>
 				<li class="user_icon2"><a
-					href="#"
-					target="showinfo">我的资料</a>
+					href="seller_info.jsp" >我的资料</a>
 				</li>
 				<li class="user_icon8"><a href="seller_addgoods.jsp" >上架新品</a>
 				</li>
 				<li class="user_icon9"><a
-					href="OrderServlet?method=selectsellerorderlist" target="showinfo">查看订单</a>
+					href="Order!findOrderListBySeller.action">查看订单</a>
 				</li>
 			</ul>
 			<div class="user_logout">

@@ -34,6 +34,9 @@
         <property name="goodsDescribe" type="java.lang.String">
             <column name="Goods_Describe" length="200" />
         </property>
+        <property name="goodsTime" type="java.sql.Timestamp">
+            <column name="GoodsTime" length="23" />
+        </property>
         <set name="shoppingCarts" inverse="true">
             <key>
                 <column name="Goods_Id" not-null="true" />
