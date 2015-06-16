@@ -54,7 +54,15 @@ public class OrderServiceImpl implements OrderService {
 			}
 		}
 	}
-
+	
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public void deleteOrder(int orderId){
+		Orders order=new Orders();
+		order=orderDao.findOrdersById(orderId);
+		orderDao.deleteOinfoByOrderId(orderId);
+		orderDao.deleteOrder(order);
+	}
+	
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
 	public List getOrderListByCustomId(String customId) {
 		return orderDao.findOrderListByCustomId(customId);

@@ -38,13 +38,17 @@
 								</tr>
 								<s:iterator value="orderlist" status="status">
 									<tr>
-										<td><s:property value="orderId" /></td>
-										<td><s:property value="orderTime" /></td>
-										<td class="td2">￥<s:property value="orderSub" /></td>
-										<td><s:property value="orderName" /></td>
+										<td><s:property value="orderId" />
+										</td>
+										<td><s:property value="orderTime" />
+										</td>
+										<td class="td2">￥<s:property value="orderSub" />
+										</td>
+										<td><s:property value="orderName" />
+										</td>
 										<td><a
 											href="Order!findOrderInfoByCustomOrder.action?orderId=<s:property value="orderId"/>">详细信息</a><br />
-											<a href="#">取消订单</a></td>
+										</td>
 									</tr>
 								</s:iterator>
 							</table>

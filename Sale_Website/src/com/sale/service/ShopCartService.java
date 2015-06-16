@@ -7,7 +7,7 @@ import com.sale.model.ShoppingCart;
 
 public interface ShopCartService {
 
-	public abstract void addShopCart(ShoppingCart scart,int goodsId,String customId);
+	public abstract void addShopCart(ShoppingCart scart,int snum,int goodsId,String customId);
 	
 	public abstract List getShopCartByCustomId(String customId);
 	

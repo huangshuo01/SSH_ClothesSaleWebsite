@@ -37,16 +37,23 @@ function login() {
 		loginfrm.action = "Login!adminLogin.action"
 	}
 }
-function getdata(){
-	var i=0;
-	if(i==j){
-	window.location.href="Goods!loadindex.action";
+function register() {
+	if (regfrm.radiobutton1[0].checked == true) {
+		regfrm.action = "Register!addCustom.action"
 	}
-	j++;
+	if (regfrm.radiobutton1[1].checked == true) {
+		regfrm.action = "Register!addSeller.action"
 	}
-function addorder() {
-	orderform.action = "OrderServlet?method=addorder"
-	alert("successful insert ");
+}
+function g(o){return document.getElementById(o);}
+function HoverLi(n,m,q,p){
+	for(var i=1;i<=m;i++)
+	{
+		g(q+i).className='normaltab';
+		g(p+i).className='hide';
+	}
+	g(p+n).className='nohide';
+	g(q+n).className='hot';
 }
 function updateorder(){
 	alert("successful update ");

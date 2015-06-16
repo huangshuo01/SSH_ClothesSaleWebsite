@@ -8,7 +8,7 @@
     <class name="com.sale.model.Custom" table="Custom" schema="dbo" catalog="ClothesSale">
         <id name="customId" type="java.lang.String">
             <column name="Custom_Id" length="20" />
-            <generator class="native" />
+            <generator class="assigned" />
         </id>
         <property name="customPassword" type="java.lang.String">
             <column name="Custom_Password" length="20" not-null="true" />

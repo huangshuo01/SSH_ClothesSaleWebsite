@@ -39,7 +39,7 @@
 				<s:if test="#session.Type=='Custom'">
 					<li class="my_account"><s:property value="#session.Id" />
 					</li>
-					<li class="my_account"><a href="custom_info.jsp" id="reg">管理</a>
+					<li class="my_account"><a href="User!findCustomInfo.action" id="reg">管理</a>
 					</li>
 					<li class="my_account"><a href="ShopCart!findShopCart.action"
 						id="reg">购物车</a>

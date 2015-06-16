@@ -129,6 +129,11 @@ public class GoodsAction extends ActionSupport {
 		return "goods";
 	}
 	
+	public String findGoodsToCustom(){
+		goods=goodsService.getGoodsBygoodsId(goods.getGoodsId());
+		return "goodsinfo";
+	}
+	
 	public String updateGoods(){
 		String path = ServletActionContext.getServletContext().getRealPath(
 				this.getSavePath())

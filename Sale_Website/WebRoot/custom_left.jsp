@@ -22,8 +22,7 @@
 			<div class="pad_border">
 				<ul class="user_menu">
 					<li class="user_icon1"><a
-						href="UserServlet?method=selectInfo&username=<%=request.getSession().getAttribute("loginname")%>"
-						target="showinfo">个人信息</a></li>
+						href="User!findCustomInfo.action">个人信息</a></li>
 					<li class="user_icon2"><a
 						href="Order!findOrderListByCustom.action" >我的订单</a>
 					</li>

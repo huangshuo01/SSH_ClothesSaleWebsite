@@ -7,11 +7,16 @@
 			<result name="success">/index.jsp</result>
 			<result name="input">/login.jsp</result>
 		</action>
+		<action name="Register" class="registerAction">
+			<result name="success">/login.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
 		<action name="Goods" class="goodsAction">
 			<param name="savePath">/upload</param>
 			<result name="success">/seller_goodslist.jsp</result>
 			<result name="addgoods">/seller_addgoods.jsp</result>
 			<result name="goods">/seller_goods.jsp</result>
+			<result name="goodsinfo">/goods_detail.jsp</result>
 			<result name="update">/seller_goods.jsp</result>
 			<result name="delete" type="redirectAction">
 				<param name="actionName">Goods</param>
@@ -26,6 +31,7 @@
 				<param name="redirect">addShopCart</param>
 			</result>
 			<result name="shopcart">/custom_scart.jsp</result>
+			<result name="index">/index.jsp</result>
 			<result name="order">/custom_addorder.jsp</result>
 			<result name="success" type="redirectAction">
 				<param name="actionName">ShopCart</param>
@@ -38,10 +44,25 @@
 		</action>
 		<action name="Order" class="orderAction">
 			<result name="addOrder">/index.jsp</result>
+			<result name="deleteOrder" type="redirectAction">
+				<param name="actionName">Order</param>
+				<param name="refresh">deleteorder</param>
+			</result>
 			<result name="sellerorder">/seller_orderlist.jsp</result>
 			<result name="customorder">/custom_orderlist.jsp</result>
-			<result name="selleroinfo">/seller_orderinfo.jsp</result>	
-			<result name="customoinfo">/custom_orderinfo.jsp</result>			
+			<result name="selleroinfo">/seller_orderinfo.jsp</result>
+			<result name="customoinfo">/custom_orderinfo.jsp</result>
+		</action>
+		<action name="User" class="userAction">
+			<result name="sellerinfo">/seller_info.jsp</result>
+			<result name="custominfo">/custom_info.jsp</result>
+			<result name="admininfo">/admin_info.jsp</result>
+			<result name="updateseller">/seller_info.jsp</result>
+			<result name="updatecustom">/custom_info.jsp</result>
+			<result name="updateadmin">/admin_info.jsp</result>	
+			<result name="updatesellerPsd">/login.jsp</result>
+			<result name="updatecustomPsd">/login.jsp</result>
+			<result name="updateadminPsd">/login.jsp</result>	
 		</action>
 	</package>
 </struts>    

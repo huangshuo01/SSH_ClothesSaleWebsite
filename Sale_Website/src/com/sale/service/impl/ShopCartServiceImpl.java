@@ -23,14 +23,14 @@ public class ShopCartServiceImpl implements ShopCartService {
 	GoodsDao goodsDao;
 
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
-	public void addShopCart(ShoppingCart scart, int goodsId, String customId) {
+	public void addShopCart(ShoppingCart scart,int snum, int goodsId, String customId) {
 		Custom custom = new Custom();
 		custom.setCustomId(customId);
 		Goods goods = new Goods();
 		scart.setCustom(custom);
 		goods = (Goods) goodsDao.findGoodsBygoodsId(goodsId);
 		scart.setGoods(goods);
-		scart.setShoppingNum(1);
+		scart.setShoppingNum(snum);
 		scart.setShoppingSub(goods.getGoodsPrice() * scart.getShoppingNum());
 		shopCartDao.insertShopCart(scart);
 	}

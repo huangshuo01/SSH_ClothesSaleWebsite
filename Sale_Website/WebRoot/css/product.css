@@ -85,7 +85,8 @@
 .box5 .txt7 { font-size:12px; font-weight:bold; color:#a51922!important; padding:0 5px;  }
 .box5 .txt8 { background:#f7f7f7; }
 .box5 .txt8 input{margin:0px 10px 0 5px; }
-.box5 .btn1 {background:url(../images/product_btn6.jpg) no-repeat; width:127px; height:36px; border:none; cursor:pointer;}
+.box5 .btn1 {background:url(../images/addcart.png) no-repeat; width:187px; height:50px; border:none; cursor:pointer;}
+/* .box5 .btn2 {background:url(../images/shoucan.png) no-repeat; width:100px; height:50px; border:none; cursor:pointer;} */
 .box5 .txt9 {text-align:center; margin-top:30px; _margin-top:40px; }
 
 

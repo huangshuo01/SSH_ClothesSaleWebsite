@@ -44,7 +44,7 @@
 										<td><s:property value="orderName" /></td>
 										<td><a
 											href="Order!findOrderInfoBySellerOrder.action?orderId=<s:property value="orderId"/>">详细信息</a></br>
-											<a href="#">取消订单</a></td>
+											<a href="Order!deleteOrder?order.orderId=<s:property value="orderId" /> ">取消订单</a></td>
 									</tr>
 								</s:iterator>
 							</table>

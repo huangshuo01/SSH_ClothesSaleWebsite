@@ -38,7 +38,26 @@ public class ShopCartAction extends ActionSupport {
 	public String addShopCart() {
 		ActionContext ac = ActionContext.getContext();
 		ShoppingCart scart1 = new ShoppingCart();
-		shopCartService.addShopCart(scart1, goods.getGoodsId(), (String) ac
+		scart1.setShoppingNum(1);
+		shopCartService.addShopCart(scart1,snum, goods.getGoodsId(), (String) ac
+				.getSession().get("Id"));
+		return "addShopCart";
+	}
+	
+	public String addShopCartIndex() {
+		ActionContext ac = ActionContext.getContext();
+		ShoppingCart scart1 = new ShoppingCart();
+		scart1.setShoppingNum(1);
+		shopCartService.addShopCart(scart1,snum, goods.getGoodsId(), (String) ac
+				.getSession().get("Id"));
+		return "index";
+	}
+	
+	public String addShopCartDetail() {
+		ActionContext ac = ActionContext.getContext();
+		ShoppingCart scart1 = new ShoppingCart();
+		scart1.setShoppingNum(1);
+		shopCartService.addShopCart(scart1,snum, goods.getGoodsId(), (String) ac
 				.getSession().get("Id"));
 		return "addShopCart";
 	}

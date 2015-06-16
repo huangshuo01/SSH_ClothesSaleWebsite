@@ -20,11 +20,14 @@ public class OrderAction extends ActionSupport {
 	private List orderlist;
 	private List oinfolist;
 	private int orderId;
+	private String refresh;
 
 	@Override
 	public String execute() throws Exception {
-		// TODO Auto-generated method stub
-		return super.execute();
+		if(refresh.equals("deleteorder"))
+			return findOrderListBySeller();
+		else
+			return null;
 	}
 
 	public String addOrder() {
@@ -33,6 +36,11 @@ public class OrderAction extends ActionSupport {
 		String customId = (String) ac.getSession().get("Id");
 		orderService.addOrder(list, order, customId);
 		return "addOrder";
+	}
+	
+	public String deleteOrder(){
+		orderService.deleteOrder(order.getOrderId());
+		return "deleteOrder";
 	}
 
 	public String findOrderListBySeller() {
@@ -112,5 +120,19 @@ public class OrderAction extends ActionSupport {
 	 */
 	public void setOinfolist(List oinfolist) {
 		this.oinfolist = oinfolist;
+	}
+
+	/**
+	 * @return the refresh
+	 */
+	public String getRefresh() {
+		return refresh;
+	}
+
+	/**
+	 * @param refresh the refresh to set
+	 */
+	public void setRefresh(String refresh) {
+		this.refresh = refresh;
 	}
 }

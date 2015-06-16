@@ -7,6 +7,8 @@ import com.sale.model.Orders;
 public interface OrderService {
 	public abstract void addOrder(List sinfolist,Orders orderA,String customId);
 	
+	public abstract void deleteOrder(int orderId);
+	
 	public abstract List getOrderListByCustomId(String customId);
 	
 	public abstract List getOrderListBySellerId(String sellerId);

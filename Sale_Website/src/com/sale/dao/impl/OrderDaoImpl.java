@@ -59,6 +59,37 @@ public class OrderDaoImpl implements OrderDao {
 		}
 		session.close();
 	}
+
+	public void deleteOrder(Orders order){
+		Session session = null;
+		Transaction tx = null;
+		try {
+			session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			session.delete(order);
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+	}
+	
+	public void deleteOinfoByOrderId(int orderId){
+		Session session = null;
+		Transaction tx = null;
+		String hql="delete from OrderInfo where orders.orderId=?";
+		try {
+			session = sessionFactory.openSession();
+			tx = session.beginTransaction();
+			Query query = session.createQuery(hql);
+		    query.setParameter(0, orderId);   
+		    query.executeUpdate();
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		session.close();
+	}
 	
 	public List findOrderListByCustomId(String customId){
 		Session session = null;

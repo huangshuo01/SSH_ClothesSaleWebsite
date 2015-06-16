@@ -22,12 +22,16 @@
 	<bean id="goodsAction" class="com.sale.action.GoodsAction" />	
 	<bean id="shopCartAction" class="com.sale.action.ShopCartAction" />
 	<bean id="orderAction" class="com.sale.action.OrderAction" />			
+	<bean id="userAction" class="com.sale.action.UserAction" />	
+	<bean id="registerAction" class="com.sale.action.RegisterAction" />	
 	<bean id="userDao" class="com.sale.dao.impl.UserDaoImpl" />
 	<bean id="goodsDao" class="com.sale.dao.impl.GoodsDaoImpl" />
 	<bean id="shopCartDao" class="com.sale.dao.impl.ShopCartDaoImpl"/>
-	<bean id="orderDao" class="com.sale.dao.impl.OrderDaoImpl"/>	
+	<bean id="orderDao" class="com.sale.dao.impl.OrderDaoImpl"/>
 	<bean id="shopCartService" class="com.sale.service.impl.ShopCartServiceImpl"/>	
 	<bean id="loginService" class="com.sale.service.impl.LoginServiceImpl" />	
 	<bean id="goodsService" class="com.sale.service.impl.GoodsServiceImpl" />	
-	<bean id="orderService" class="com.sale.service.impl.OrderServiceImpl" />	
+	<bean id="orderService" class="com.sale.service.impl.OrderServiceImpl" />
+	<bean id="userService" class="com.sale.service.impl.UserServiceImpl" />
+	<bean id="registerService" class="com.sale.service.impl.RegisterServiceImpl" />			
 </beans>

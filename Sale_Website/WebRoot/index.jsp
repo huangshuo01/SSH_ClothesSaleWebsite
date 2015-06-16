@@ -52,7 +52,7 @@
 						<s:iterator value="salelist" status="status">
 							<div class="right_box4">
 								<div class="con_pic4">
-									<a href="#" title=""><img
+									<a href="Goods!findGoodsToCustom.action?goods.goodsId=<s:property value="goodsId" />" title=""><img
 										src="upload/<s:property value="goodsPic"/>" alt="图片名称" /> </a>
 								</div>
 								<div class="con_txt3">
@@ -67,7 +67,7 @@
 								</div>
 								<div class="con_txt4">
 									<a
-										href="ShopCart!addShopCart.action?goods.goodsId=<s:property value="goodsId"/>">
+										href="ShopCart!addShopCartIndex.action?goods.goodsId=<s:property value="goodsId"/>&snum=1">
 										<img style="text-align:center; width:95px;height:28px;"
 										src="images/addcart.png" /> </a> <a href="#"> <img
 										style="text-align:center; width:67px;height:28px;"

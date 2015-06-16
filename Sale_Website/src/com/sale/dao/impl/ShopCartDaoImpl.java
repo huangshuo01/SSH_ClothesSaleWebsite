@@ -126,7 +126,7 @@ public class ShopCartDaoImpl implements ShopCartDao {
 			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
 			Query query = session.createQuery(hql);
-		    query.setParameter(0, customId);   // 忘了索引是从几开始的了,不知道索引对不对
+		    query.setParameter(0, customId);   
 		    query.executeUpdate();
 			tx.commit();
 		} catch (Exception e) {
