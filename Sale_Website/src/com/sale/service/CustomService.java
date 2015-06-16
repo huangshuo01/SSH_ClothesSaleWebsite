@@ -1,13 +1,11 @@
 package com.sale.service;
 
-import java.util.List;  
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sale.model.Custom;;  
 
 public interface CustomService {
-	 	public void doCreateCustom(Custom custom);  
-	    public List<Custom> findAllCustom();  
-	    public void delete(Custom custom);  
-	    public void update(Custom custom);  
-	    public Custom findCustomById(int CustomId); 
+	 	public abstract void updateCustom(Custom custom);
+	    public abstract Custom getCustomById(String customId);
 }

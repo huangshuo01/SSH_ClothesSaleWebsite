@@ -1,39 +1,25 @@
 package com.sale.service.impl;
 
-import java.util.List;
+import javax.annotation.Resource;
+
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.sale.model.Custom;
-import com.sale.dao.CustomDAO;
+import com.sale.dao.CustomDao;
 import com.sale.service.CustomService;
 
+@Transactional
 public class CustomServiceImpl implements CustomService{
-	private CustomDAO dao;  
+	@Resource
+	CustomDao customDao;
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public Custom getCustomById(String customId) {
+		return (Custom) customDao.findCustomById(customId);
+	}
     
-    public CustomDAO getDao() {  
-        return dao;  
-    }  
-  
-    public void setDao(CustomDAO dao) {  
-        this.dao = dao;  
-    }  
-  
-    public void doCreateCustom(Custom custom) {  
-        this.dao.doCreateCustom(custom);  
-    }  
-  
-    public List<Custom> findAllCustom() {  
-        return this.dao.findAllCustom();  
-    }  
-  
-    public void delete(Custom custom) {  
-        this.dao.removeCustom(custom);  
-    }  
-  
-    public void update(Custom custom) {  
-        this.dao.updateCustom(custom);  
-    }  
-  
-    public Custom findCustomById(int CustomId) {  
-        return this.dao.findCustomById(CustomId);  
-    }  
+	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
+	public void updateCustom(Custom custom) {
+		customDao.updateCustom(custom);
+	}
 }
